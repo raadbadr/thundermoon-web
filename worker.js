@@ -76,7 +76,10 @@ export default {
     // 3. Check URL path for suspicious patterns (decode first)
     const rawPath = url.pathname + url.search;
     let decodedPath = rawPath;
-    try { decodedPath = decodeURIComponent(rawPath); } catch (e) {}
+    try {
+      decodedPath = decodeURIComponent(rawPath);
+      decodedPath = decodedPath.replace(/\+/g, ' '); // form-encoded + → space
+    } catch (e) {}
     const testPath = rawPath + ' ' + decodedPath;
     for (const pattern of SUSPICIOUS_PATTERNS) {
       if (pattern.test(testPath)) {
