@@ -2,11 +2,12 @@
 <html lang="ar" dir="rtl" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
-  <meta name="theme-color" id="themeColorMeta" content="#070D14">
-  <meta name="description" content="سياسة الخصوصية — ThunderMoon وألعابها بما فيها LaserBeam. AdMob، Supabase، IAP، و ATT.">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; worker-src 'self' blob:;">
+  <meta name="theme-color" content="#1a1a28" id="themeColorMeta">
+  <meta name="description" content="سياسة الخصوصية — ThunderMoon وألعابها بما فيها LaserBeam.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>سياسة الخصوصية | ThunderMoon</title>
@@ -15,187 +16,180 @@
   <link rel="apple-touch-icon" href="assets/laserbeam_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="base.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Monoton&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="footer.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    html { -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
+    button, input, select, textarea, optgroup { font-family: inherit; font-size: inherit; line-height: inherit; color: inherit; margin: 0; }
+    button, [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; appearance: button; }
+    img, svg, video, canvas { display: block; max-width: 100%; }
+    a { color: inherit; }
+    :root, [data-theme="light"] {
+      --primary: rgb(0, 140, 200); --primary-light: rgb(35, 165, 220); --primary-dark: rgb(0, 110, 175);
+      --secondary: rgb(120, 60, 200); --accent: rgb(0, 180, 100);
+      --text-primary: rgb(26, 26, 38); --text-secondary: rgb(70, 80, 95);
+      --bg-top: rgb(240, 244, 250); --bg-mid: rgb(232, 238, 248); --bg-bottom: rgb(224, 232, 244);
+      --glass: rgba(255,255,255,0.85); --glass-border: rgba(0,0,0,0.08); --glass-strong: rgba(255,255,255,0.95);
+      --shadow-light: rgba(255,255,255,0.3); --shadow-dark: rgba(0,0,0,0.08);
+      --white: #ffffff; --primary-shadow: rgba(0,140,200,0.3);
+    }
+    [data-theme="dark"] {
+      --primary: rgb(0, 229, 255); --primary-light: rgb(102, 242, 255); --primary-dark: rgb(0, 200, 220);
+      --secondary: rgb(176, 38, 255); --accent: rgb(0, 255, 136);
+      --text-primary: rgb(255,255,255); --text-secondary: rgba(255,255,255,0.7);
+      --bg-top: rgb(26,26,40); --bg-mid: rgb(18,18,30); --bg-bottom: rgb(10,10,20);
+      --glass: rgba(255,255,255,0.08); --glass-border: rgba(255,255,255,0.15); --glass-strong: rgba(255,255,255,0.12);
+      --shadow-light: rgba(255,255,255,0.05); --shadow-dark: rgba(5,5,15,0.3);
+      --primary-shadow: rgba(0,229,255,0.35);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { background: var(--bg-bottom); }
+    body { font-family: 'IBM Plex Sans Arabic', sans-serif; background: linear-gradient(135deg, var(--bg-top), var(--bg-bottom)); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    body.has-site-header { padding-top: 52px; }
+    .header { text-align: center; padding: 3rem 2rem; background: var(--glass); backdrop-filter: blur(20px); border-radius: 20px; margin-bottom: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+    [data-theme="dark"] .header { box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--primary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .last-updated { color: var(--text-secondary); font-size: 0.95rem; }
+    .content { background: var(--glass); backdrop-filter: blur(20px); padding: 3rem; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+    [data-theme="dark"] .content { box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    h2 { font-size: 1.8rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); background: linear-gradient(135deg, var(--primary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    h2:first-of-type { margin-top: 0; }
+    h3 { color: var(--text-primary); font-size: 1.3rem; margin: 1.5rem 0 0.75rem; }
+    p { margin-bottom: 1rem; color: var(--text-secondary); }
+    ul, ol { margin: 1rem 0 1rem 2rem; color: var(--text-secondary); }
+    li { margin-bottom: 0.5rem; }
+    .content a { color: var(--primary); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.2em; }
+    .content a:hover { color: var(--primary-light); }
+    [data-theme="dark"] .content a { color: #5ce1ff; }
+    [data-theme="dark"] .content a:hover { color: #9aedff; }
+    .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--white); text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px var(--primary-shadow); }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px var(--primary-shadow); }
+    @media (max-width: 768px) { .container { padding: 1rem; } .content { padding: 2rem 1.5rem; } h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } }
+  </style>
 </head>
 <body class="has-site-header" data-page="Privacy">
-  
-
   <header class="site-header">
-    <a href="index.html" class="brand-logo brand-logo--xs" style="text-decoration:none;">
-      <img src="assets/laserbeam_logo.png" alt="ThunderMoon" class="brand-logo-img">
-      <span class="brand-logo-text">ThunderMoon</span>
-    </a>
-    <div class="menu-wrap" style="position:relative; margin-inline-start:auto;">
-      <button class="menu-btn" id="langMenuBtn" aria-label="Language">
-        <div class="icon-circle"><span class="icon">🌐</span></div>
-        <span class="menu-text" id="currentLangDisplay">العربية</span>
-      </button>
+    <div class="menu-btn" id="langMenuBtn">
+      <div class="icon-circle"><span class="icon">🌐</span></div>
+      <div class="menu-text"><div class="menu-label" data-i18n="language">اللغة</div><div class="menu-value" id="currentLangDisplay">العربية</div></div>
+      <span class="menu-icon">⋯</span>
       <div class="menu-dropdown" id="langDropdown">
         <div class="menu-dropdown-item" data-lang="ar"><span class="checkmark" id="check-ar">✓</span><span>العربية</span></div>
-        <div class="menu-dropdown-item" data-lang="en"><span class="checkmark" id="check-en">✓</span><span>English</span></div>
-        <div class="menu-dropdown-item" data-lang="fr"><span class="checkmark" id="check-fr">✓</span><span>Français</span></div>
-        <div class="menu-dropdown-item" data-lang="ur"><span class="checkmark" id="check-ur">✓</span><span>اردو</span></div>
+        <div class="menu-dropdown-item" data-lang="en"><span class="checkmark" id="check-en" style="display:none">✓</span><span>English</span></div>
+        <div class="menu-dropdown-item" data-lang="fr"><span class="checkmark" id="check-fr" style="display:none">✓</span><span>Français</span></div>
+        <div class="menu-dropdown-item" data-lang="ur"><span class="checkmark" id="check-ur" style="display:none">✓</span><span>اردو</span></div>
       </div>
     </div>
-    <div class="menu-wrap" style="position:relative;">
-      <button class="menu-btn" id="themeMenuBtn" aria-label="Appearance">
-        <div class="icon-circle"><span class="icon" id="themeIcon">🌙</span></div>
-        <span class="menu-text" id="currentThemeDisplay">داكن</span>
-      </button>
+    <div class="menu-btn" id="themeMenuBtn">
+      <div class="icon-circle"><span class="icon" id="themeIcon">🌙</span></div>
+      <div class="menu-text"><div class="menu-label" data-i18n="appearance">المظهر</div><div class="menu-value" id="currentThemeDisplay" data-i18n="dark">داكن</div></div>
+      <span class="menu-icon">⋯</span>
       <div class="menu-dropdown" id="themeDropdown">
-        <div class="menu-dropdown-item" data-theme="light"><span class="checkmark" id="check-light">✓</span><span data-i18n="light">فاتح</span></div>
+        <div class="menu-dropdown-item" data-theme="light"><span class="checkmark" id="check-light" style="display:none">✓</span><span data-i18n="light">فاتح</span></div>
         <div class="menu-dropdown-item" data-theme="dark"><span class="checkmark" id="check-dark">✓</span><span data-i18n="dark">داكن</span></div>
       </div>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="eyebrow">ThunderMoon</div>
-      <h1 class="grad-cyan" data-i18n="privacyTitle">سياسة الخصوصية</h1>
-      <p class="page-hero-sub legal-updated" data-i18n="privacyUpdated" style="border-bottom:none; max-width:none;">آخر تحديث: 21 يونيو 2026</p>
+  <div class="container">
+    <div class="header">
+      <h1 data-i18n="privacyTitle">سياسة الخصوصية</h1>
+      <p class="last-updated" data-i18n="privacyUpdated">آخر تحديث: 21 يونيو 2026</p>
     </div>
-  </section>
 
-  <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div class="legal-content">
-        <p class="legal-updated" data-i18n="privacyUpdated">آخر تحديث: 21 يونيو 2026</p>
+    <div class="content">
+      <h2>1. المقدمة</h2>
+      <p>ThunderMoon ("نحن" أو "الاستوديو") مطور ألعاب موبايل مستقل. نحن ملتزمون بحماية خصوصيتك. توضح هذه السياسة كيف نجمع ونستخدم ونحمي البيانات عند استخدامك ألعابنا بما فيها <strong>LaserBeam</strong> ("اللعبة").</p>
+      <p>بتنزيلك أو استخدامك اللعبة فإنك توافق على الممارسات الموصوفة في هذه السياسة.</p>
 
-        <div class="legal-toc">
-          <h4>المحتويات</h4>
-          <ul>
-            <li><a href="#intro">المقدمة</a></li>
-            <li><a href="#data">البيانات التي نجمعها</a></li>
-            <li><a href="#admob">إعلانات Google AdMob</a></li>
-            <li><a href="#supabase">المصادقة وحفظ التقدم — Supabase</a></li>
-            <li><a href="#iap">المشتريات داخل التطبيق</a></li>
-            <li><a href="#att">إطار الشفافية للتطبيق (ATT)</a></li>
-            <li><a href="#storage">التخزين المحلي</a></li>
-            <li><a href="#third">الخدمات التالثة</a></li>
-            <li><a href="#children">الأطفال</a></li>
-            <li><a href="#rights">حقوقك</a></li>
-            <li><a href="#contact">تواصل معنا</a></li>
-          </ul>
-        </div>
+      <h2>2. البيانات التي نجمعها</h2>
+      <h3>البيانات التي نجمعها مباشرة</h3>
+      <ul>
+        <li>تقدم اللعبة (المستويات المكتملة، الإعدادات، الإنجازات) — محفوظ محلياً وعلى حسابك.</li>
+        <li>عنوان البريد الإلكتروني إذا سجلت الدخول عبر Supabase.</li>
+        <li>بلاغات الأخطاء المرسلة يدوياً (تشمل موديل الجهاز وإصدار iOS إذا قدمتها).</li>
+      </ul>
+      <h3>البيانات التي تجمعها الخدمات الثالثة</h3>
+      <p>نستخدم خدمات ثالثة (Google AdMob و Supabase و Apple StoreKit) قد تجمع بيانات وفقاً لسياساتهم الخاصة.</p>
 
-        <h2 id="intro">المقدمة</h2>
-        <p>ThThunderMoon ("نحن" أو "الاستوديو") مطور ألعاب موبايل مستقل. نحن ملتزمون بحماية خصوصيتك. توضح هذه السياسة كيف نجمع ونستخدم ونحمي البيانات عند استخدامك ألعابنا بما فيها <strong>LaserBeam</strong> ("اللعبة").</p>
-        <p>بتنزيلك أو استخدامك اللعبة فإنك توافق على الممارسات الموصوفة في هذه السياسة.</p>
+      <h2>3. إعلانات Google AdMob</h2>
+      <p>نستخدم <strong>Google AdMob</strong> لعرض الإعلانات داخل اللعبة. AdMob قد يجمع معرفات الجهاز (مثل IDFA إذا سمحت عبر ATT) ومعلومات الاستخدام لتحسين استهداف الإعلانات.</p>
+      <ul>
+        <li><strong>المعلومات المجمعة:</strong> معرف الجهاز، نوع الجهاز، إصدار OS، عنوان IP، نشاط الإعلان.</li>
+        <li><strong>الغرض:</strong> عرض إعلانات ذات صلة وقياس أدائها.</li>
+        <li><strong>إزالة الإعلانات:</strong> يمكنك إزالة جميع الإعلانات بشكل دائم عبر شراء "إزالة الإعلانات" داخل التطبيق.</li>
+      </ul>
+      <p>لمزيد من المعلومات راجع <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">تكنولوجيا إعلانات Google</a>.</p>
 
-        <h2 id="data">البيانات التي نجمعها</h2>
-        <h3>البيانات التي نجمعها مباشرة</h3>
-        <ul>
-          <li>تقدم اللعبة (المستويات المكتملة، الإعدادات، الإنجازات) — محفوظ محلياً وعلى حسابك.</li>
-          <li>عنوان البريد الإلكتروني إذا سجلت الدخول عبر Supabase.</li>
-          <li>بلاغات الأخطاء المرسلة يدوياً (تشمل موديل الجهاز وإصدار iOS إذا قدمتها).</li>
-        </ul>
-        <h3>البيانات التي تجمعها الخدمات التالثة</h3>
-        <p>نستخدم خدمات تالثة (Google AdMob و Supabase و Apple StoreKit) قد تجمع بيانات وفقا لسياساتهم الخاصة. راجع الأقسام أدناه.</p>
+      <h2>4. المصادقة وحفظ التقدم — Supabase</h2>
+      <p>نستخدم <strong>Supabase</strong> لخدمات المصادقة وحفظ التقدم السحابي. إذا سجلت الدخول نجمع عنوان بريدك الإلكتروني ونزامن تقدم اللعبة عبر الأجهزة. راجع <a href="https://supabase.com/privacy" target="_blank" rel="noopener">سياسة خصوصية Supabase</a>.</p>
+      <p>اللعبة تعمل بدون تسجيل الدخول — لكن التقدم سيكون محلياً فقط.</p>
 
-        <h2 id="admob">إعلانات Google AdMob</h2>
-        <p>نستخدم <strong>Google AdMob</strong> لعرض الإعلانات داخل اللعبة. AdMob قد يجمع معرفات الجهاز (مثل IDFA إذا سمحت عبر ATT) ومعلومات الاستخدام لتحسين استهداف الإعلانات.</p>
-        <ul>
-          <li><strong>المعلومات المجمعة:</strong> معرف الجهاز، نوع الجهاز، إصدار OS، عنوان IP، نشاط الإعلان (مرات العرض/النقر).</li>
-          <li><strong>الغرض:</strong> عرض إعلانات ذات صلة وقياس أدائها.</li>
-          <li><strong>إزالة الإعلانات:</strong> يكنك إزالة جميع الإعلانات بشكل دائم عبر شراء "إزالة الإعلانات" داخل التطبيق.</li>
-        </ul>
-        <p>لمزيد من المعلومات راجع <a href="https://support.google.com/ads/answer/6145103" target="_blank" rel="noopener">سياسة الإعلانات في Google</a> و <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">تكنولوجيا إعلانات Google</a>.</p>
+      <h2>5. المشتريات داخل التطبيق (IAP)</h2>
+      <p>نستخدم <strong>Apple StoreKit</strong> لمعالجة المشتريات داخل التطبيق (شراء "إزالة الإعلانات" لمرة واحدة). المعاملات تُعالج بالكامل بواسطة Apple ولا نجمع أي معلومات مالية. راجع <a href="https://www.apple.com/legal/itunes/us/terms.html" target="_blank" rel="noopener">شروط متجر iOS App Store</a>.</p>
 
-        <h2 id="supabase">المصادقة وحفظ التقدم — Supabase</h2>
-        <p>نستخدم <strong>Supabase</strong> (https://supabase.com) لخدمات المصادقة وحفظ التقدم السحابي. إذا سجلت الدخول:</p>
-        <ul>
-          <li><strong>نجمع:</strong> عنوان البريد الإلكتروني الذي تقدمه للتسجيل.</li>
-          <li><strong>نجمع:</strong> تقدم اللعبة (المستويات المكتملة، الإنجازات) ومزامنته عبر الأجهزة.</li>
-          <li><strong>الغرض:</strong> استعادة التقدم عند إعادة التثبيت أو تبديل الجهاز.</li>
-          <li><strong>الموقع:</strong> Supabase خدمة سحابية؛ بياناتك قد تُخزن على خوادم في مناطق متعددة. راجع <a href="https://supabase.com/privacy" target="_blank" rel="noopener">سياسة خصوصية Supabase</a>.</li>
-        </ul>
-        <p>اللعبة تعمل بدون تسجيل الدخول — لكن التقدم سيكون محلياً فقط ولن يزامن عبر الأجهزة.</p>
+      <h2>6. إطار الشفافية للتطبيق (ATT)</h2>
+      <p>نحن ملتزمون بإطار App Tracking Transparency من Apple. عند أول محاولة للوصول إلى IDFA ستظهر لك موجه iOS يطلب إذنك. القرار طوعي ويمكنك تغييره في أي وقت من إعدادات iOS. راجع <a href="https://developer.apple.com/documentation/apptrackingtransparency" target="_blank" rel="noopener">وثائق Apple ATT</a>.</p>
 
-        <h2 id="iap">المشتريات داخل التطبيق (IAP)</h2>
-        <p>نستخدم <strong>Apple StoreKit</strong> لمعالجة المشتريات داخل التطبيق. نقدم حاليا:</p>
-        <ul>
-          <li>شراء "إزالة الإعلانات" — لمرة واحدة، يزيل جميع الإعلانات دائماً.</li>
-        </ul>
-        <p>المشتريات تُعالج بالكامل بواسطة Apple. <strong>نجمع من iOS App Store</strong>:</p>
-        <ul>
-          <li>إيصال المشترية (للتحقق من الشراء).</li>
-          <li>سجل المشتريات (لإعادة التنزيل واستعادة المشتريات).</li>
-        </ul>
-        <p>نجمع لا أي معلومات مالية — Apple تعالج جميع المعاملات بطريقة آمنة. راجع <a href="https://www.apple.com/legal/itunes/us/terms.html" target="_blank" rel="noopener">شروط متجر iOS App Store</a>.</p>
+      <h2>7. التخزين المحلي</h2>
+      <p>اللعبة تخزن تفضيلاتك (اللغة، الصوت، إعدادات العرض) محلياً على جهازك باستخدام UserDefaults. هذه البيانات لا تُرسل إلى أي خادم.</p>
 
-        <h2 id="att">إطار الشفافية للتطبيق (ATT)</h2>
-        <p>نحن ملتزمون بإطار الشفافية للتطبيق (App Tracking Transparency) من Apple. عند أول محاولة للوصول إلى معرف التطبيق (IDFA) للأغراض المتعلقة بالتطبيق، ستظهر لك موجه iOS يطلب إذنك.</p>
-        <ul>
-          <li><strong>إذا سمحت:</strong> يكن Google AdMob استخدام IDFA لعرض إعلانات أكثر ذات صلة وقياس أدائها.</li>
-          <li><strong>إذا رفضت أو لم تطلب:</strong> سيتم عرض الإعلانات دون استخدام IDFA — قد تكون أقل ذات صلة.</li>
-          <li><strong>القرار طوعي:</strong> يكنك تغيير قرارك في أي وقت من إعدادات iOS → الخصوصية والأمان → التطبيق التطبيق.</li>
-        </ul>
-        <p>راجع <a href="https://developer.apple.com/documentation/apptrackingtransparency" target="_blank" rel="noopener">وثائق Apple ATT</a>.</p>
+      <h2>8. الخدمات الثالثة</h2>
+      <ul>
+        <li><strong>Google AdMob</strong> — الإعلانات (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">سياسة Google</a>).</li>
+        <li><strong>Supabase</strong> — المصادقة والتخزين السحابي (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">سياسة Supabase</a>).</li>
+        <li><strong>Apple StoreKit</strong> — المشتريات داخل التطبيق (<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">سياسة Apple</a>).</li>
+      </ul>
 
-        <h2 id="storage">التخزين المحلي</h2>
-        <p>اللعبة تخزن تفضيلاتك (اللغة، الصوت، إعدادات العرض) محلياً على جهازك باستخدام UserDefaults. هذه البيانات لا تُرسل إلى أي خادم. يكنك مسحها بحذف اللعبة.</p>
+      <h2>9. الأطفال</h2>
+      <p>اللعبة ليست موجهة للأطفال دون سن 13. لا نجمع عمداً معلومات شخصية من الأطفال.</p>
 
-        <h2 id="third">الخدمات التالثة</h2>
-        <p>قد نجمع بيانات عبر الخدمات التالية. لكل منها سياسة خصوصية خاصة:</p>
-        <ul>
-          <li><strong>Google AdMob</strong> — الإعلانات (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">سياسة Google</a>).</li>
-          <li><strong>Supabase</strong> — المصادقة والتخزين السحابي (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">سياسة Supabase</a>).</li>
-          <li><strong>Apple StoreKit</strong> — المشتريات داخل التطبيق (<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">سياسة Apple</a>).</li>
-          <li><strong>Apple GameKit</strong> — الإنجازات ولوحة المتصدرين (إذا فعّلت).</li>
-        </ul>
-        <p>نجمع لا نملك أو نتحكم في البيانات التي تجمعها هذه الخدمات. يجب التواصل معهم مباشرة لممارسة حقوقك بموجب سياساتهم.</p>
+      <h2>10. حقوقك</h2>
+      <ul>
+        <li>الوصول إلى بياناتك المحفوظة على حساب Supabase.</li>
+        <li>طلب حذف حسابك وبياناتك (راسلنا على raadbadr@gmail.com).</li>
+        <li>سحب موافقتك على التتبع عبر ATT في أي وقت.</li>
+      </ul>
 
-        <h2 id="children">الأطفال</h2>
-        <p>اللعبة ليست موجهة للأطفال دون سن 13. نجمع لا نجمع عمداً معلومات شخصية من الأطفال. إذا اعتقدت أن طفلاً قدم لنا معلومات، تواصل معنا وسنحذفها.</p>
-
-        <h2 id="rights">حقوقك</h2>
-        <p>لديك الحق في:</p>
-        <ul>
-          <li>الوصول إلى بياناتك المحفوظة على حساب Supabase.</li>
-          <li>طلب حذف حسابك وبياناتك (راسلنا على raadbadr@gmail.com).</li>
-          <li>سحب موافقتك على التطبيق عبر ATT في أي وقت.</li>
-          <li>إزالة الإعلانات عبر الشراء داخل التطبيق.</li>
-        </ul>
-
-        <h2 id="contact">تواصل معنا</h2>
-        <p>إذا كان لديك أسئلة حول هذه السياسة أو معالجة البيانات، راسلنا:</p>
-        <p><strong>ThThunderMoon</strong><br>البريد: <a href="mailto:raadbadr@gmail.com">raadbadr@gmail.com</a><br>وقت الاستجابة: ~48 ساعة</p>
-      </div>
+      <h2>11. تواصل معنا</h2>
+      <p>إذا كان لديك أسئلة حول هذه السياسة، راسلنا: <a href="mailto:raadbadr@gmail.com">raadbadr@gmail.com</a> — وقت الاستجابة: ~48 ساعة.</p>
     </div>
-  </section>
+
+    <div style="text-align: center; padding: 2rem;">
+      <a href="index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="currentColor"/></svg>
+        الرئيسية
+      </a>
+    </div>
+  </div>
 
   <footer class="footer">
-    <p class="footer-tagline" data-i18n="footerTagline">استوديو ألعاب موبايل مستقل. نصنع تجارب أجوائية حيث يلتقي الضوء بالهندسة.</p>
-    <div class="footer-links">
-      <a href="index.html#games" data-i18n="gamesLink">الألعاب</a>
+    <p class="footer-links">
       <a href="about.html" data-i18n="aboutLink">من نحن</a>
       <a href="blog.html" data-i18n="blogLink">المدونة</a>
       <a href="support.html" data-i18n="supportLink">الدعم</a>
       <a href="privacy.html" data-i18n="privacyLink">سياسة الخصوصية</a>
       <a href="terms.html" data-i18n="termsLink">شروط الاستخدام</a>
-      <a class="footer-social-icon" href="https://x.com" target="_blank" rel="noopener" aria-label="X">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a class="footer-social-icon" href="mailto:raadbadr@gmail.com" aria-label="Email">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-      </a>
-    </div>
-    <div class="footer-logo-wrap">
-      <a href="index.html" class="brand-logo brand-logo--xs" style="text-decoration:none;">
-        <img src="assets/laserbeam_logo.png" alt="ThunderMoon" class="brand-logo-img">
-        <span class="brand-logo-text">ThunderMoon</span>
-      </a>
-    </div>
-    <div class="footer-copyright">
-      <span class="footer-copyright-line1" data-i18n="copyrightLine1">© 2026</span>
-      <span class="footer-copyright-line2" data-i18n="copyrightLine2">جميع الحقوق محفوظة</span>
-    </div>
+      <a href="index.html#games" data-i18n="gamesLink">الألعاب</a>
+      <a href="mailto:raadbadr@gmail.com" class="footer-social-icon" aria-label="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+      <a href="https://x.com/thundermoon" target="_blank" rel="noopener noreferrer" aria-label="X" class="footer-social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    </p>
+    <p class="footer-copyright">
+      <span data-i18n="copyrightLine2">جميع الحقوق محفوظة</span>
+      <span> <span class="brand-logo brand-logo--xs"><img src="assets/laserbeam_logo.png" alt="T" class="brand-logo-img"><span class="brand-logo-text">HUNDERMOON</span></span> <span data-i18n="copyrightLine1">© 2026</span></span>
+    </p>
   </footer>
 
   <script src="i18n.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js', { scope: './' }).catch(function () {});
+      });
+    }
+  </script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 {
   "name": "ThunderMoon",
   "short_name": "ThunderMoon",
-  "description": "ThunderMoon — Indie Game Studio",
+  "description": "Indie mobile game studio — games where light meets geometry",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0A0A14",
-  "theme_color": "#0A0A14",
-  "lang": "en",
-  "dir": "ltr"
+  "background_color": "#1a1a28",
+  "theme_color": "#1a1a28",
+  "lang": "ar",
+  "dir": "rtl"
 }
