@@ -1,0 +1,109 @@
+/* ═══════════════════════════════════════════════════════════════
+   ThunderMoon — Footer
+   ═══════════════════════════════════════════════════════════════ */
+
+.tm-footer {
+  border-top: var(--border);
+  background: rgba(5, 5, 8, 0.6);
+  backdrop-filter: blur(20px);
+  margin-top: var(--sp-2xl);
+}
+
+.tm-footer-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--sp-xl) var(--sp-md);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--sp-xl);
+}
+
+.tm-footer-brand {
+  max-width: 300px;
+}
+
+.tm-footer-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: var(--sp-md);
+}
+.tm-footer-logo .grad-cyan {
+  background: linear-gradient(135deg, var(--cyan), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tm-footer-tagline {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+.tm-footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: var(--sp-md);
+}
+
+.tm-footer-col ul { display: flex; flex-direction: column; gap: var(--sp-sm); }
+.tm-footer-col a {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  transition: color var(--dur);
+}
+.tm-footer-col a:hover { color: var(--text); }
+
+.tm-footer-bottom {
+  border-top: var(--border);
+  padding: var(--sp-md) var(--sp-md);
+  text-align: center;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.tm-footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+/* ── Social ── */
+.tm-social {
+  display: flex;
+  gap: var(--sp-sm);
+  margin-top: var(--sp-md);
+}
+.tm-social a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-dim);
+  transition: all var(--dur);
+}
+.tm-social a:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .tm-footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-lg);
+    padding: var(--sp-lg) var(--sp-sm);
+  }
+  .tm-footer-brand { grid-column: 1 / -1; }
+}

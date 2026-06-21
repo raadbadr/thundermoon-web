@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+  <meta name="theme-color" content="#0A0A14">
+  <meta name="description" content="ThunderMoon — Indie mobile game studio. LaserBeam and beyond.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>ThunderMoon — Indie Game Studio</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="footer.css">
+  <style>
+    /* ═══ HERO ═══ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 120px 0 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, var(--purple-glow), transparent 60%);
+      filter: blur(60px);
+      animation: pulse 6s ease-in-out infinite;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      top: 30%;
+      right: 10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--cyan-glow), transparent 60%);
+      filter: blur(80px);
+      animation: pulse 8s ease-in-out infinite reverse;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.15); }
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 800px;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--bg-glass);
+      border: var(--border-glow);
+      border-radius: 100px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: var(--sp-lg);
+      backdrop-filter: blur(20px);
+    }
+
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--laser);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--laser-glow);
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      letter-spacing: -0.04em;
+      margin-bottom: var(--sp-md);
+    }
+
+    .hero h1 .word {
+      display: inline-block;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--text-dim);
+      max-width: 500px;
+      margin: 0 auto var(--sp-xl);
+      line-height: 1.5;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: var(--sp-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+    /* ═══ GAMES SECTION ═══ */
+    .games-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--sp-lg);
+      margin-top: var(--sp-xl);
+    }
+
+    .game-card {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-surface);
+      border: var(--border);
+      transition: all var(--dur-slow) var(--ease);
+    }
+
+    .game-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 255, 136, 0.2);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 255, 136, 0.08);
+    }
+
+    .game-card-visual {
+      position: relative;
+      min-height: 320px;
+      background: var(--bg-void);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .game-card-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .game-card-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, var(--bg-surface));
+      pointer-events: none;
+    }
+
+    .game-card-info {
+      padding: var(--sp-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--sp-sm);
+    }
+
+    .game-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--laser);
+    }
+
+    .game-card-info h3 {
+      font-size: 1.8rem;
+    }
+
+    .game-card-info p {
+      font-size: 0.9rem;
+    }
+
+    .game-meta {
+      display: flex;
+      gap: var(--sp-sm);
+      flex-wrap: wrap;
+      margin-top: var(--sp-xs);
+    }
+
+    .game-meta span {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border: var(--border);
+      border-radius: 100px;
+      color: var(--text-faint);
+    }
+
+    .game-card-cta {
+      margin-top: var(--sp-md);
+      display: flex;
+      gap: var(--sp-sm);
+      align-items: center;
+    }
+
+    .app-store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--text);
+      color: var(--bg-void);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: all var(--dur);
+    }
+    .app-store-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,255,255,0.15); }
+    .app-store-btn svg { width: 16px; height: 16px; }
+
+    .coming-soon {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-faint);
+      padding: 10px 20px;
+      border: var(--border);
+      border-radius: var(--radius-sm);
+    }
+
+    /* ═══ ABOUT SECTION ═══ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-xl);
+      align-items: center;
+    }
+
+    .about-text h2 { margin-bottom: var(--sp-md); }
+    .about-text p { margin-bottom: var(--sp-sm); }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-md);
+    }
+
+    .stat {
+      text-align: center;
+      padding: var(--sp-md);
+      background: var(--bg-glass);
+      border: var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-top: 4px;
+    }
+
+    /* ═══ VALUES ═══ */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-md);
+      margin-top: var(--sp-xl);
+    }
+
+    .value-card {
+      padding: var(--sp-lg);
+      background: var(--bg-glass);
+      border: var(--border);
+      border-radius: var(--radius-lg);
+      transition: all var(--dur);
+    }
+
+    .value-card:hover {
+      border-color: rgba(0, 229, 255, 0.2);
+      transform: translateY(-4px);
+    }
+
+    .value-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cyan-soft);
+      border-radius: var(--radius-md);
+      margin-bottom: var(--sp-md);
+      color: var(--cyan);
+    }
+
+    .value-card h3 { font-size: 1.2rem; margin-bottom: var(--sp-xs); }
+    .value-card p { font-size: 0.85rem; }
+
+    /* ═══ BLOG PREVIEW ═══ */
+    .blog-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-md);
+      margin-top: var(--sp-xl);
+    }
+
+    .blog-card {
+      padding: var(--sp-lg);
+      background: var(--bg-glass);
+      border: var(--border);
+      border-radius: var(--radius-lg);
+      transition: all var(--dur);
+      cursor: pointer;
+    }
+
+    .blog-card:hover {
+      border-color: rgba(176, 38, 255, 0.2);
+      transform: translateY(-4px);
+    }
+
+    .blog-date {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--purple);
+      letter-spacing: 0.05em;
+      margin-bottom: var(--sp-sm);
+    }
+
+    .blog-card h3 { font-size: 1.1rem; margin-bottom: var(--sp-xs); }
+    .blog-card p { font-size: 0.85rem; }
+
+    .blog-read-more {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--cyan);
+      margin-top: var(--sp-sm);
+      letter-spacing: 0.05em;
+    }
+
+    /* ═══ CTA SECTION ═══ */
+    .cta-section {
+      text-align: center;
+      padding: var(--sp-2xl) var(--sp-md);
+      background: var(--bg-glass);
+      border: var(--border);
+      border-radius: var(--radius-lg);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-section h2 { margin-bottom: var(--sp-sm); }
+    .cta-section p { margin: 0 auto var(--sp-lg); }
+
+    .cta-buttons {
+      display: flex;
+      gap: var(--sp-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 900px) {
+      .game-card { grid-template-columns: 1fr; }
+      .game-card-visual { min-height: 240px; }
+      .game-card-visual::after { background: linear-gradient(180deg, transparent 50%, var(--bg-surface)); }
+      .about-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .blog-preview-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-cta { flex-direction: column; align-items: center; }
+      .hero-cta .btn { width: 100%; max-width: 280px; justify-content: center; }
+      .about-stats { grid-template-columns: 1fr; gap: var(--sp-sm); }
+      .stat-num { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cosmic-bg"></div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="tm-header" id="header">
+    <div class="tm-header-inner">
+      <a href="index.html" class="tm-logo">
+        <div class="tm-logo-mark">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 4L8 16l6 2-4 10 14-12-6-2 4-10z" fill="url(#tm-grad)" stroke="url(#tm-grad)" stroke-width="1.5" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="tm-grad" x1="4" y1="4" x2="28" y2="28">
+                <stop offset="0%" stop-color="#00E5FF"/>
+                <stop offset="100%" stop-color="#B026FF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="tm-logo-text">ThunderMoon</span>
+      </a>
+
+      <nav class="tm-nav">
+        <ul class="tm-nav-links">
+          <li><a href="index.html#games" class="tm-nav-link active">Games</a></li>
+          <li><a href="about.html" class="tm-nav-link">Studio</a></li>
+          <li><a href="blog.html" class="tm-nav-link">Blog</a></li>
+          <li><a href="support.html" class="tm-nav-link">Support</a></li>
+        </ul>
+        <a href="index.html#games" class="tm-nav-cta">Play Now</a>
+      </nav>
+
+      <button class="tm-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="tm-mobile-menu" id="mobileMenu">
+    <a href="index.html#games">Games</a>
+    <a href="about.html">Studio</a>
+    <a href="blog.html">Blog</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content fade-in">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Indie Game Studio
+      </div>
+      <h1>
+        <span class="word grad-cyan">Thunder</span><span class="word grad-cyan">Moon</span>
+      </h1>
+      <p class="hero-subtitle">
+        We craft mobile games where light meets geometry. Built with precision, powered by imagination.
+      </p>
+      <div class="hero-cta">
+        <a href="#games" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Explore Games
+        </a>
+        <a href="about.html" class="btn btn-ghost">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll">Scroll ↓</div>
+  </section>
+
+  <!-- ═══ GAMES ═══ -->
+  <section class="section" id="games">
+    <div class="container">
+      <div class="eyebrow">Featured Games</div>
+      <h2>Light cuts through darkness</h2>
+      <p style="margin-top: 16px; margin-bottom: 24px;">Each game is a spectral experience — precise geometry, cosmic atmospheres, and gameplay that rewards precision.</p>
+
+      <div class="games-grid">
+        <!-- LaserBeam -->
+        <article class="game-card">
+          <div class="game-card-visual">
+            <img src="assets/laserbeam_preview.png" alt="LaserBeam game preview" loading="lazy">
+          </div>
+          <div class="game-card-info">
+            <span class="game-tag">▲ Puzzle / Arcade</span>
+            <h3>LaserBeam</h3>
+            <p>Guide laser beams through a dark geometric world. Split, reflect, and merge light to solve increasingly complex puzzles. Every level is a study in spectral physics.</p>
+            <div class="game-meta">
+              <span>iOS 16+</span>
+              <span>10 Levels</span>
+              <span>Universal</span>
+            </div>
+            <div class="game-card-cta">
+              <a href="#" class="app-store-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                App Store
+              </a>
+              <span class="coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="eyebrow">The Studio</div>
+          <h2>Indie by choice,<br>precise by nature</h2>
+          <p><strong>ThunderMoon</strong> is a one-person indie game studio focused on creating atmospheric mobile experiences. No teams, no committees — just a single vision executed with craft.</p>
+          <p>Every game starts from a feeling: the weight of darkness before light arrives. The satisfaction of a perfect angle. The silence between puzzle and solution.</p>
+          <a href="about.html" class="btn btn-ghost" style="margin-top: 16px;">Read More →</a>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-num">1</div>
+            <div class="stat-label">Game Live</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Levels</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">UE5</div>
+            <div class="stat-label">Engine</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VALUES ═══ -->
+  <section class="section" style="background: rgba(5,5,8,0.4);">
+    <div class="container">
+      <div class="eyebrow">What We Believe</div>
+      <h2>Three principles</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Precision Design</h3>
+          <p>Every pixel, every angle, every interaction is deliberate. No filler, no noise — just the essential.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Atmosphere First</h3>
+          <p>Games should feel like places. We build worlds you step into — dark, cosmic, alive with light.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Mobile Native</h3>
+          <p>Built for touch from the ground up. Not a port — a game that belongs on the device in your pocket.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BLOG PREVIEW ═══ -->
+  <section class="section" id="blog-preview">
+    <div class="container">
+      <div class="eyebrow">Latest Posts</div>
+      <h2>Devlog & thoughts</h2>
+      <div class="blog-preview-grid">
+        <article class="blog-card" onclick="location.href='blog.html'">
+          <div class="blog-date">2026.06.21</div>
+          <h3>LaserBeam: From Concept to App Store</h3>
+          <p>The journey of building a laser puzzle game in Unreal Engine 5 — from first prototype to production-ready iOS build.</p>
+          <div class="blog-read-more">Read →</div>
+        </article>
+        <article class="blog-card" onclick="location.href='blog.html'">
+          <div class="blog-date">2026.06.15</div>
+          <h3>Spectral Geometry: Our Design Philosophy</h3>
+          <p>How darkness, light, and precision geometry shape every decision in our games. A deep dive into the visual language.</p>
+          <div class="blog-read-more">Read →</div>
+        </article>
+        <article class="blog-card" onclick="location.href='blog.html'">
+          <div class="blog-date">2026.06.10</div>
+          <h3>Mobile Deferred Rendering in UE5</h3>
+          <p>Technical breakdown: enabling Mobile Deferred Shading path for real-time lighting on iOS without melting the battery.</p>
+          <div class="blog-read-more">Read →</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section">
+        <h2>Stay in orbit</h2>
+        <p>Follow ThunderMoon for game updates, devlogs, and new releases. No spam — just signal.</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary">Follow on X</a>
+          <a href="support.html" class="btn btn-ghost">Get Support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="tm-footer">
+    <div class="tm-footer-inner">
+      <div class="tm-footer-brand">
+        <div class="tm-footer-logo">
+          <span class="grad-cyan">ThunderMoon</span>
+        </div>
+        <p class="tm-footer-tagline">Indie mobile game studio. Crafting atmospheric experiences where light meets geometry.</p>
+        <div class="tm-social">
+          <a href="#" aria-label="X/Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+          <a href="mailto:raadbadr@gmail.com" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-footer-col">
+        <h4>Games</h4>
+        <ul>
+          <li><a href="index.html#games">LaserBeam</a></li>
+          <li><a href="#">More Coming</a></li>
+        </ul>
+      </div>
+      <div class="tm-footer-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </div>
+      <div class="tm-footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tm-footer-bottom">
+      <p class="tm-footer-copy">© 2026 ThunderMoon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

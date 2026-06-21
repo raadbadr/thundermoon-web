@@ -1,0 +1,12 @@
+{
+  "name": "ThunderMoon",
+  "short_name": "ThunderMoon",
+  "description": "ThunderMoon — Indie Game Studio",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0A0A14",
+  "theme_color": "#0A0A14",
+  "lang": "en",
+  "dir": "ltr"
+}

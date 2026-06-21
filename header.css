@@ -1,0 +1,176 @@
+/* ═══════════════════════════════════════════════════════════════
+   ThunderMoon — Header / Navigation
+   ═══════════════════════════════════════════════════════════════ */
+
+.tm-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: all var(--dur) var(--ease);
+}
+
+.tm-header-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-lg);
+}
+
+/* Scrolled state */
+.tm-header.scrolled {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: var(--border);
+}
+
+/* ── Logo ── */
+.tm-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  z-index: 2;
+}
+
+.tm-logo-mark {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.tm-logo-mark svg { width: 100%; height: 100%; }
+
+.tm-logo-text {
+  background: linear-gradient(135deg, var(--cyan), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Nav ── */
+.tm-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-lg);
+}
+
+.tm-nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-lg);
+}
+
+.tm-nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: var(--text-dim);
+  transition: color var(--dur);
+  position: relative;
+  padding: 4px 0;
+}
+
+.tm-nav-link:hover { color: var(--text); }
+.tm-nav-link.active { color: var(--cyan); }
+
+.tm-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--cyan);
+  transition: width var(--dur) var(--ease);
+}
+.tm-nav-link:hover::after,
+.tm-nav-link.active::after { width: 100%; }
+
+/* ── CTA ── */
+.tm-nav-cta {
+  padding: 8px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: var(--border-glow);
+  border-radius: var(--radius-sm);
+  color: var(--cyan);
+  transition: all var(--dur);
+  white-space: nowrap;
+}
+.tm-nav-cta:hover {
+  background: var(--cyan-soft);
+  border-color: var(--cyan);
+}
+
+/* ── Mobile Toggle ── */
+.tm-burger {
+  display: none;
+  width: 24px;
+  height: 18px;
+  position: relative;
+  z-index: 2;
+}
+.tm-burger span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: var(--text);
+  border-radius: 1px;
+  transition: all var(--dur) var(--ease);
+}
+.tm-burger span:nth-child(1) { top: 0; }
+.tm-burger span:nth-child(2) { top: 8px; }
+.tm-burger span:nth-child(3) { top: 16px; }
+
+.tm-burger.open span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+.tm-burger.open span:nth-child(2) { opacity: 0; }
+.tm-burger.open span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+
+/* ── Mobile Menu ── */
+.tm-mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: var(--bg-void);
+  backdrop-filter: blur(40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur);
+}
+.tm-mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tm-mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text-dim);
+  transition: color var(--dur);
+}
+.tm-mobile-menu a:hover { color: var(--cyan); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .tm-nav-links, .tm-nav-cta { display: none; }
+  .tm-burger { display: block; }
+}
