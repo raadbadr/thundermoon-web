@@ -1,151 +1,192 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About ThunderMoon — indie mobile game studio by Raad Badr.">
-  <meta name="theme-color" content="#0A0A14">
-  <title>About — ThunderMoon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+  <meta name="theme-color" id="themeColorMeta" content="#070D14">
+  <meta name="description" content="عن ThunderMoon — استوديو ألعاب موبايل مستقل على يد رعد بدر.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>عن ThunderMoon</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="assets/laserbeam_logo.png">
+  <link rel="apple-touch-icon" href="assets/laserbeam_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="footer.css">
   <style>
-    .page-hero { padding: 140px 0 60px; text-align: center; }
-    .page-hero h1 { margin-bottom: 16px; }
-    .page-hero p { max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
+    .about-wrap { max-width: 820px; margin: 0 auto; padding: 0 var(--sp-lg); }
+    .about-block { margin-bottom: var(--sp-2xl); }
+    .about-block h2 {
+      font-size: 1.5rem; margin-bottom: var(--sp-md); padding-bottom: var(--sp-sm);
+      border-bottom: 1px solid var(--primary-soft); color: var(--primary);
+      display: flex; align-items: center; gap: var(--sp-sm);
+    }
+    .about-block h2::before {
+      content: ''; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 10px var(--laser-glow);
+    }
+    .about-block p { font-size: 1.02rem; line-height: 1.85; margin-bottom: var(--sp-sm); }
+    .about-block p strong { color: var(--accent); }
 
-    .about-content { max-width: 800px; margin: 0 auto; }
-    .about-content h2 { margin: 48px 0 16px; }
-    .about-content p { margin-bottom: 16px; font-size: 1.05rem; line-height: 1.8; }
-    .about-content p strong { color: var(--cyan); }
-
-    .timeline { margin: 40px 0; padding-left: 24px; border-left: 1px solid rgba(0,229,255,0.15); }
-    .timeline-item { position: relative; padding-bottom: 32px; }
+    .timeline { margin-top: var(--sp-md); padding-inline-start: 24px;
+      border-inline-start: 1px solid var(--primary-soft); }
+    .timeline-item { position: relative; padding-bottom: var(--sp-lg); }
     .timeline-item::before {
-      content: ''; position: absolute; left: -29px; top: 4px;
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--cyan); box-shadow: 0 0 12px var(--cyan-glow);
+      content: ''; position: absolute; inset-inline-start: -29px; top: 4px;
+      width: 10px; height: 10px; border-radius: 50%; background: var(--primary);
+      box-shadow: 0 0 12px var(--primary-glow);
     }
-    .timeline-date { font-family: var(--font-mono); font-size: 0.75rem; color: var(--purple); margin-bottom: 4px; }
-    .timeline-item h3 { font-size: 1.1rem; margin-bottom: 4px; }
-    .timeline-item p { font-size: 0.9rem; margin: 0; }
+    .timeline-date { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-bottom: 4px; }
+    .timeline-item h4 { font-size: 1.05rem; margin-bottom: 4px; }
+    .timeline-item p { font-size: 0.92rem; }
 
-    .tech-stack { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; }
-    .tech-tag {
-      font-family: var(--font-mono); font-size: 0.8rem;
-      padding: 8px 16px; border: var(--border); border-radius: 100px;
-      color: var(--text-dim); background: var(--bg-glass);
-    }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--sp-md); margin-top: var(--sp-md); }
+    .tool-card { padding: var(--sp-md); background: var(--bg-glass); border: var(--border);
+      border-radius: var(--radius-md); backdrop-filter: blur(20px); }
+    .tool-card h4 { font-size: 1rem; color: var(--primary); margin-bottom: 4px; }
+    .tool-card p { font-size: 0.85rem; }
 
-    @media (max-width: 768px) { .page-hero { padding: 100px 0 40px; } }
+    .next-card { padding: var(--sp-lg); background: var(--bg-glass); border: var(--border-glow);
+      border-radius: var(--radius-lg); backdrop-filter: blur(20px); text-align: center; }
+    .next-card h3 { color: var(--accent); margin-bottom: var(--sp-sm); }
   </style>
 </head>
-<body>
+<body class="has-site-header" data-page="About">
   <div class="cosmic-bg"></div>
 
-  <header class="tm-header" id="header">
-    <div class="tm-header-inner">
-      <a href="index.html" class="tm-logo">
-        <div class="tm-logo-mark">
-          <svg viewBox="0 0 32 32" fill="none"><path d="M22 4L8 16l6 2-4 10 14-12-6-2 4-10z" fill="url(#tm-grad)" stroke="url(#tm-grad)" stroke-width="1.5" stroke-linejoin="round"/><defs><linearGradient id="tm-grad" x1="4" y1="4" x2="28" y2="28"><stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#B026FF"/></linearGradient></defs></svg>
-        </div>
-        <span class="tm-logo-text">ThunderMoon</span>
-      </a>
-      <nav class="tm-nav">
-        <ul class="tm-nav-links">
-          <li><a href="index.html#games" class="tm-nav-link">Games</a></li>
-          <li><a href="about.html" class="tm-nav-link active">Studio</a></li>
-          <li><a href="blog.html" class="tm-nav-link">Blog</a></li>
-          <li><a href="support.html" class="tm-nav-link">Support</a></li>
-        </ul>
-        <a href="index.html#games" class="tm-nav-cta">Play Now</a>
-      </nav>
-      <button class="tm-burger" id="burger"><span></span><span></span><span></span></button>
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <a href="index.html" class="brand-logo brand-logo--xs" style="text-decoration:none;">
+      <img src="assets/laserbeam_logo.png" alt="ThunderMoon" class="brand-logo-img">
+      <span class="brand-logo-text">ThunderMoon</span>
+    </a>
+    <div class="menu-wrap" style="position:relative; margin-inline-start:auto;">
+      <button class="menu-btn" id="langMenuBtn" aria-label="Language">
+        <div class="icon-circle"><span class="icon">🌐</span></div>
+        <span class="menu-text" id="currentLangDisplay">العربية</span>
+      </button>
+      <div class="menu-dropdown" id="langDropdown">
+        <div class="menu-dropdown-item" data-lang="ar"><span class="checkmark" id="check-ar">✓</span><span>العربية</span></div>
+        <div class="menu-dropdown-item" data-lang="en"><span class="checkmark" id="check-en">✓</span><span>English</span></div>
+        <div class="menu-dropdown-item" data-lang="fr"><span class="checkmark" id="check-fr">✓</span><span>Français</span></div>
+        <div class="menu-dropdown-item" data-lang="ur"><span class="checkmark" id="check-ur">✓</span><span>اردو</span></div>
+      </div>
+    </div>
+    <div class="menu-wrap" style="position:relative;">
+      <button class="menu-btn" id="themeMenuBtn" aria-label="Appearance">
+        <div class="icon-circle"><span class="icon" id="themeIcon">🌙</span></div>
+        <span class="menu-text" id="currentThemeDisplay">داكن</span>
+      </button>
+      <div class="menu-dropdown" id="themeDropdown">
+        <div class="menu-dropdown-item" data-theme="light"><span class="checkmark" id="check-light">✓</span><span data-i18n="light">فاتح</span></div>
+        <div class="menu-dropdown-item" data-theme="dark"><span class="checkmark" id="check-dark">✓</span><span data-i18n="dark">داكن</span></div>
+      </div>
     </div>
   </header>
-  <div class="tm-mobile-menu" id="mobileMenu">
-    <a href="index.html#games">Games</a><a href="about.html">Studio</a><a href="blog.html">Blog</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a>
-  </div>
 
+  <!-- ═══ PAGE HERO ═══ -->
   <section class="page-hero">
     <div class="container">
-      <div class="eyebrow" style="justify-content: center;">The Studio</div>
-      <h1 class="grad-cyan">About ThunderMoon</h1>
-      <p>One developer. One vision. Games where light meets geometry.</p>
+      <div class="eyebrow">ThunderMoon</div>
+      <h1 class="grad-cyan" data-i18n="aboutPageTitle">عن ثندرمون</h1>
+      <p class="page-hero-sub" data-i18n="aboutPageSubtitle">مطور واحد. رؤية واحدة. ألعاب حيث يلتقي الضوء بالهندسة.</p>
     </div>
   </section>
 
-  <section class="section-sm">
-    <div class="container">
-      <div class="about-content">
-        <h2>The story</h2>
-        <p><strong>ThunderMoon</strong> is the indie game studio of <strong>Raad Badr</strong>, a developer based in Saudi Arabia. The studio was born from a simple obsession: the visual language of light cutting through darkness.</p>
-        <p>Before ThunderMoon, there were years of building apps — parking solutions, utilities, platforms. But games were always the gravitational pull. The question wasn't <em>if</em>, but <em>when</em>.</p>
-        <p>In 2026, that question was answered with <strong>LaserBeam</strong> — a puzzle game built in Unreal Engine 5 where every level is a study in spectral physics. Split light, reflect it, merge colors, solve the geometry.</p>
+  <!-- ═══ ABOUT CONTENT ═══ -->
+  <section class="section" style="padding-top: 0;">
+    <div class="about-wrap">
 
-        <h2>The philosophy</h2>
-        <p>ThunderMoon games follow a design language called <strong>Spectral Geometry</strong>:</p>
-        <p>• <strong>Darkness is material</strong> — not absence, but canvas. Deep blue-black space that breathes.</p>
-        <p>• <strong>Light is action</strong> — laser-green for action, cyan for energy, purple for transformation. No fourth color above the dark.</p>
-        <p>• <strong>Precision over decoration</strong> — every line, every angle, every halo is deliberate. No random glow, no free fog.</p>
-        <p>• <strong>Mobile native</strong> — built for touch, designed for the device in your pocket. Not a port, not a compromise.</p>
+      <div class="about-block">
+        <h2 data-i18n="theStory">القصة</h2>
+        <p data-i18n="aboutDesc">ثندرمون استوديو ألعاب موبايل مستقل يركز على تجارب أجوائية. لا فرق، لا لجان — رؤية واحدة تنفذ بإتقان.</p>
+        <p data-i18n="aboutDesc2">كل لعبة تبدأ من شعور: ثقل العتمة قبل وصول الضوء. رضا الزاوية المثالية. الصمت بين اللغز والحل.</p>
+      </div>
 
-        <h2>The timeline</h2>
+      <div class="about-block">
+        <h2 data-i18n="thePhilosophy">الفلسفة</h2>
+        <p>نؤمن أن الألعاب يجب أن تكون <strong>أماكن</strong> قبل أن تكون أنظمة. عوالم تخطفها — مظلمة، كونية، نابضة بالضوء. التصميم الدقيق ليس زينة بل لغة: كل بكسل، كل زاوية، كل تفاعل مقصود. لا حشو، لا ضجيج — الأساسي فقط.</p>
+        <p>الهندسة الطيفية هي أساسنا البصري: العتمة والضوء والهندسة الدقيقة تشكل كل قرار. اللعبة تنتمي للجهاز في جيبك — مبنية للّمس من الأساس، ليست منقولة.</p>
+      </div>
+
+      <div class="about-block">
+        <h2 data-i18n="theTimeline">الخط الزمني</h2>
         <div class="timeline">
           <div class="timeline-item">
+            <div class="timeline-date">2025.10</div>
+            <h4>البداية</h4>
+            <p>ثندرمون يولد. رؤية واحدة: ألعاب أجوائية حيث يلتقي الضوء بالهندسة.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2026.01</div>
+            <h4>النموذج الأول</h4>
+            <p>لايزر بيم يأخذ شكل. أول نموذج قابل للعب في أنريل إنجن 5.</p>
+          </div>
+          <div class="timeline-item">
             <div class="timeline-date">2026.06</div>
-            <h3>LaserBeam — Production Ready</h3>
-            <p>10 levels, iOS 16+, Mobile Deferred rendering, Supabase backend, AdMob integration. App Store submission in progress.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2026.03</div>
-            <h3>LaserBeam — Prototyping</h3>
-            <p>First playable prototype in UE5. Core mechanic: laser reflection puzzles with color mixing.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2025</div>
-            <h3>App Development Era</h3>
-            <p>Years of building iOS apps — Parkinzi, and others. Learning the craft of mobile UX, performance, and shipping.</p>
+            <h4>الإطلاق</h4>
+            <p>لايزر بيم جاهز للإنتاج على iOS. 10 مستويات، عرض مؤجل للجوال، فيزياء طيفية كاملة.</p>
           </div>
         </div>
-
-        <h2>The tools</h2>
-        <div class="tech-stack">
-          <span class="tech-tag">Unreal Engine 5</span>
-          <span class="tech-tag">Swift / iOS</span>
-          <span class="tech-tag">Supabase</span>
-          <span class="tech-tag">Blender</span>
-          <span class="tech-tag">Xcode</span>
-          <span class="tech-tag">Cloudflare</span>
-          <span class="tech-tag">Git / GitHub</span>
-        </div>
-
-        <h2>What's next</h2>
-        <p>LaserBeam is just the beginning. The next game is already forming — same philosophy, new mechanics. ThunderMoon is a long-term project: one developer, many games, all sharing the same spectral DNA.</p>
       </div>
+
+      <div class="about-block">
+        <h2 data-i18n="theTools">الأدوات</h2>
+        <div class="tools-grid">
+          <div class="tool-card"><h4>Unreal Engine 5</h4><p>المحرك الأساسي. مسار العرض المؤجل للجوال.</p></div>
+          <div class="tool-card"><h4>iOS / Swift</h4><p>المنصة الأساسية. UIKit، Metal، ATT.</p></div>
+          <div class="tool-card"><h4>Supabase</h4><p>المصادقة وحفظ التقدم السحابي.</p></div>
+          <div class="tool-card"><h4>Blender</h4><p>النمذجة الهندسية والأجواء.</p></div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <h2 data-i18n="whatsNext">ماذا بعد</h2>
+        <div class="next-card">
+          <h3 data-i18n="comingSoon">قريباً</h3>
+          <p>مستويات جديدة للايزر بيم، ألعاب إضافية في نفس العالم البصري، والمزيد من الهندسة الطيفية.</p>
+          <a href="blog.html" class="btn btn-ghost" style="margin-top:16px;"><span data-i18n="readArticle">اقرأ المقال</span> →</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <footer class="tm-footer">
-    <div class="tm-footer-inner">
-      <div class="tm-footer-brand">
-        <div class="tm-footer-logo"><span class="grad-cyan">ThunderMoon</span></div>
-        <p class="tm-footer-tagline">Indie mobile game studio. Crafting atmospheric experiences where light meets geometry.</p>
-        <div class="tm-social">
-          <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="#" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
-          <a href="mailto:raadbadr@gmail.com" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></a>
-        </div>
-      </div>
-      <div class="tm-footer-col"><h4>Games</h4><ul><li><a href="index.html#games">LaserBeam</a></li><li><a href="#">More Coming</a></li></ul></div>
-      <div class="tm-footer-col"><h4>Studio</h4><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="support.html">Support</a></li></ul></div>
-      <div class="tm-footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <p class="footer-tagline" data-i18n="footerTagline">استوديو ألعاب موبايل مستقل. نصنع تجارب أجوائية حيث يلتقي الضوء بالهندسة.</p>
+    <div class="footer-links">
+      <a href="index.html#games" data-i18n="gamesLink">الألعاب</a>
+      <a href="about.html" data-i18n="aboutLink">من نحن</a>
+      <a href="blog.html" data-i18n="blogLink">المدونة</a>
+      <a href="support.html" data-i18n="supportLink">الدعم</a>
+      <a href="privacy.html" data-i18n="privacyLink">سياسة الخصوصية</a>
+      <a href="terms.html" data-i18n="termsLink">شروط الاستخدام</a>
+      <a class="footer-social-icon" href="https://x.com" target="_blank" rel="noopener" aria-label="X">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="footer-social-icon" href="mailto:raadbadr@gmail.com" aria-label="Email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+      </a>
     </div>
-    <div class="tm-footer-bottom"><p class="tm-footer-copy">© 2026 ThunderMoon. All rights reserved.</p></div>
+    <div class="footer-logo-wrap">
+      <a href="index.html" class="brand-logo brand-logo--xs" style="text-decoration:none;">
+        <img src="assets/laserbeam_logo.png" alt="ThunderMoon" class="brand-logo-img">
+        <span class="brand-logo-text">ThunderMoon</span>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      <span class="footer-copyright-line1" data-i18n="copyrightLine1">© 2026</span>
+      <span class="footer-copyright-line2" data-i18n="copyrightLine2">جميع الحقوق محفوظة</span>
+    </div>
   </footer>
-  <script src="js/main.js"></script>
+
+  <script src="i18n.js"></script>
 </body>
 </html>

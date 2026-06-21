@@ -1,155 +1,137 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ThunderMoon Support — FAQ, contact, and help for our games.">
-  <meta name="theme-color" content="#0A0A14">
-  <title>Support — ThunderMoon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+  <meta name="theme-color" id="themeColorMeta" content="#070D14">
+  <meta name="description" content="دعم ThunderMoon — أسئلة شائعة وطرق التواصل معنا.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>الدعم | ThunderMoon</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="assets/laserbeam_logo.png">
+  <link rel="apple-touch-icon" href="assets/laserbeam_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="footer.css">
   <style>
-    .page-hero { padding: 140px 0 40px; text-align: center; }
-    .support-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-top: 40px; }
-    .faq-item {
-      padding: 24px; background: var(--bg-glass); border: var(--border);
-      border-radius: var(--radius-lg); margin-bottom: 16px; cursor: pointer;
-      transition: all var(--dur);
-    }
-    .faq-item:hover { border-color: rgba(0,229,255,0.15); }
-    .faq-item summary {
-      font-family: var(--font-display); font-weight: 600; font-size: 1.05rem;
-      cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
-    }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: '+'; color: var(--cyan); font-size: 1.5rem; transition: transform var(--dur); }
-    .faq-item[open] summary::after { transform: rotate(45deg); }
-    .faq-item p { margin-top: 12px; font-size: 0.9rem; }
-    .contact-card {
-      padding: 32px; background: var(--bg-glass); border: var(--border);
-      border-radius: var(--radius-lg); position: sticky; top: 100px;
-    }
-    .contact-card h3 { font-size: 1.2rem; margin-bottom: 16px; }
-    .contact-card p { font-size: 0.85rem; margin-bottom: 16px; }
-    .contact-method {
-      display: flex; align-items: center; gap: 12px; padding: 12px 0;
-      border-top: var(--border); font-size: 0.85rem;
-    }
-    .contact-method:first-of-type { border-top: none; }
-    .contact-method svg { width: 20px; height: 20px; color: var(--cyan); flex-shrink: 0; }
-    @media (max-width: 768px) { .support-grid { grid-template-columns: 1fr; } .contact-card { position: static; } .page-hero { padding: 100px 0 30px; } }
+    .faq-eyebrow { text-align: center; margin-top: var(--sp-xs); }
   </style>
 </head>
-<body>
+<body class="has-site-header" data-page="Support">
   <div class="cosmic-bg"></div>
-  <header class="tm-header" id="header">
-    <div class="tm-header-inner">
-      <a href="index.html" class="tm-logo">
-        <div class="tm-logo-mark"><svg viewBox="0 0 32 32" fill="none"><path d="M22 4L8 16l6 2-4 10 14-12-6-2 4-10z" fill="url(#tm-grad)" stroke="url(#tm-grad)" stroke-width="1.5" stroke-linejoin="round"/><defs><linearGradient id="tm-grad" x1="4" y1="4" x2="28" y2="28"><stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#B026FF"/></linearGradient></defs></svg></div>
-        <span class="tm-logo-text">ThunderMoon</span>
-      </a>
-      <nav class="tm-nav">
-        <ul class="tm-nav-links">
-          <li><a href="index.html#games" class="tm-nav-link">Games</a></li>
-          <li><a href="about.html" class="tm-nav-link">Studio</a></li>
-          <li><a href="blog.html" class="tm-nav-link">Blog</a></li>
-          <li><a href="support.html" class="tm-nav-link active">Support</a></li>
-        </ul>
-        <a href="index.html#games" class="tm-nav-cta">Play Now</a>
-      </nav>
-      <button class="tm-burger" id="burger"><span></span><span></span><span></span></button>
+
+  <header class="site-header">
+    <a href="index.html" class="brand-logo brand-logo--xs" style="text-decoration:none;">
+      <img src="assets/laserbeam_logo.png" alt="ThunderMoon" class="brand-logo-img">
+      <span class="brand-logo-text">ThunderMoon</span>
+    </a>
+    <div class="menu-wrap" style="position:relative; margin-inline-start:auto;">
+      <button class="menu-btn" id="langMenuBtn" aria-label="Language">
+        <div class="icon-circle"><span class="icon">🌐</span></div>
+        <span class="menu-text" id="currentLangDisplay">العربية</span>
+      </button>
+      <div class="menu-dropdown" id="langDropdown">
+        <div class="menu-dropdown-item" data-lang="ar"><span class="checkmark" id="check-ar">✓</span><span>العربية</span></div>
+        <div class="menu-dropdown-item" data-lang="en"><span class="checkmark" id="check-en">✓</span><span>English</span></div>
+        <div class="menu-dropdown-item" data-lang="fr"><span class="checkmark" id="check-fr">✓</span><span>Français</span></div>
+        <div class="menu-dropdown-item" data-lang="ur"><span class="checkmark" id="check-ur">✓</span><span>اردو</span></div>
+      </div>
+    </div>
+    <div class="menu-wrap" style="position:relative;">
+      <button class="menu-btn" id="themeMenuBtn" aria-label="Appearance">
+        <div class="icon-circle"><span class="icon" id="themeIcon">🌙</span></div>
+        <span class="menu-text" id="currentThemeDisplay">داكن</span>
+      </button>
+      <div class="menu-dropdown" id="themeDropdown">
+        <div class="menu-dropdown-item" data-theme="light"><span class="checkmark" id="check-light">✓</span><span data-i18n="light">فاتح</span></div>
+        <div class="menu-dropdown-item" data-theme="dark"><span class="checkmark" id="check-dark">✓</span><span data-i18n="dark">داكن</span></div>
+      </div>
     </div>
   </header>
-  <div class="tm-mobile-menu" id="mobileMenu"><a href="index.html#games">Games</a><a href="about.html">Studio</a><a href="blog.html">Blog</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></div>
 
   <section class="page-hero">
     <div class="container">
-      <div class="eyebrow" style="justify-content: center;">Need Help?</div>
-      <h1 class="grad-cyan">Support</h1>
-      <p>Frequently asked questions and ways to reach us.</p>
+      <div class="eyebrow" data-i18n="needHelp">تحتاج مساعدة؟</div>
+      <h1 class="grad-cyan" data-i18n="supportTitle">الدعم</h1>
+      <p class="page-hero-sub" data-i18n="supportSubtitle">أسئلة شائعة وطرق التواصل معنا.</p>
     </div>
   </section>
 
-  <section class="section-sm">
+  <section class="section" style="padding-top: 0;">
     <div class="container">
-      <div class="support-grid">
-        <div>
-          <h2 style="margin-bottom: 24px;">FAQ</h2>
+      <div class="faq-eyebrow eyebrow" data-i18n="faq">الأسئلة الشائعة</div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq1q">ما الأجهزة المدعومة؟</summary>
+          <div class="faq-answer" data-i18n="faq1a">لايزر بيم يتطلب iOS 16.0 أو أحدث ويدعم الآيفون والآيباد بمعالج A12 أو أحدث. اللعبة محسنة للآيفون والآيباد في الوضع الأفقي.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq2q">كيف أزيل الإعلانات؟</summary>
+          <div class="faq-answer" data-i18n="faq2a">يمكنك إزالة جميع الإعلانات بشكل دائم عبر شراء لمرة واحدة داخل التطبيق. اضغط زر "إزالة الإعلانات" في إعدادات اللعبة.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq3q">اللعبة تتعطل عند الفتح — ماذا أفعل؟</summary>
+          <div class="faq-answer" data-i18n="faq3a">جرّب: (1) أغلق التطبيق وأعد فتحه. (2) أعد تشغيل جهازك. (3) تأكد من أحدث إصدار iOS. (4) إذا استمرت المشكلة، تواصل معنا.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq4q">هل تُحفظ تقدمي؟</summary>
+          <div class="faq-answer" data-i18n="faq4a">نعم. تقدمك محفوظ محلياً وعلى حسابك إذا سجلت الدخول. عند إعادة التثبيت، سجل بنفس الحساب لاستعادة التقدم.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq5q">كيف أبلغ عن خطأ؟</summary>
+          <div class="faq-answer" data-i18n="faq5a">راسلنا على raadbadr@gmail.com مع وصف الخطأ، موديل جهازك، إصدار iOS، وخطوات إعادة الإنتاج.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq6q">هل ستكون هناك مستويات جديدة؟</summary>
+          <div class="faq-answer" data-i18n="faq6a">نعم! نطور بنشاط مستويات ومحتوى جديد للايزر بيم. تابعنا على X للتحديثات.</div>
+        </details>
+      </div>
 
-          <details class="faq-item">
-            <summary>What devices are supported?</summary>
-            <p>LaserBeam requires iOS 16.0 or later and supports iPhone and iPad with A12 chip or newer (devices with Metal support). The game is optimized for both iPhone and iPad in landscape orientation.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>How do I remove ads?</summary>
-            <p>You can remove all ads permanently through a one-time in-app purchase. Tap the "Remove Ads" button in the game's settings menu to purchase. This is a lifetime purchase — no subscription required.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>The game crashes on launch — what should I do?</summary>
-            <p>Try these steps: (1) Force close the app and reopen. (2) Restart your device. (3) Ensure you have the latest iOS version. (4) If the issue persists, contact us with your device model and iOS version.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>Is my progress saved?</summary>
-            <p>Yes. Your progress is saved locally on your device and synced to your account if you sign in. If you reinstall the game, sign in with the same account to restore progress.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>How do I report a bug?</summary>
-            <p>Email us at raadbadr@gmail.com with a description of the bug, your device model, iOS version, and steps to reproduce. Screenshots or screen recordings are very helpful.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>Will there be new levels?</summary>
-            <p>Yes! We're actively developing new levels and content for LaserBeam. Follow us on X for updates on new releases.</p>
-          </details>
-        </div>
-
-        <div>
-          <div class="contact-card">
-            <h3>Contact Us</h3>
-            <p>We respond to all support requests within 48 hours.</p>
-            <a href="mailto:raadbadr@gmail.com" class="contact-method">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-              <span>raadbadr@gmail.com</span>
-            </a>
-            <a href="#" class="contact-method">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              <span>@ThunderMoon</span>
-            </a>
-            <div class="contact-method">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-              <span>Response time: ~48h</span>
-            </div>
-          </div>
-        </div>
+      <div class="support-contact">
+        <h3 style="margin-bottom: var(--sp-sm);" data-i18n="contactUs">تواصل معنا</h3>
+        <p data-i18n="responseTime">وقت الاستجابة: ~48 ساعة</p>
+        <a href="mailto:raadbadr@gmail.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+          raadbadr@gmail.com
+        </a>
       </div>
     </div>
   </section>
 
-  <footer class="tm-footer">
-    <div class="tm-footer-inner">
-      <div class="tm-footer-brand">
-        <div class="tm-footer-logo"><span class="grad-cyan">ThunderMoon</span></div>
-        <p class="tm-footer-tagline">Indie mobile game studio. Crafting atmospheric experiences where light meets geometry.</p>
-        <div class="tm-social">
-          <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="#" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
-          <a href="mailto:raadbadr@gmail.com" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></a>
-        </div>
-      </div>
-      <div class="tm-footer-col"><h4>Games</h4><ul><li><a href="index.html#games">LaserBeam</a></li><li><a href="#">More Coming</a></li></ul></div>
-      <div class="tm-footer-col"><h4>Studio</h4><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="support.html">Support</a></li></ul></div>
-      <div class="tm-footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+  <footer class="footer">
+    <p class="footer-tagline" data-i18n="footerTagline">استوديو ألعاب موبايل مستقل. نصنع تجارب أجوائية حيث يلتقي الضوء بالهندسة.</p>
+    <div class="footer-links">
+      <a href="index.html#games" data-i18n="gamesLink">الألعاب</a>
+      <a href="about.html" data-i18n="aboutLink">من نحن</a>
+      <a href="blog.html" data-i18n="blogLink">المدونة</a>
+      <a href="support.html" data-i18n="supportLink">الدعم</a>
+      <a href="privacy.html" data-i18n="privacyLink">سياسة الخصوصية</a>
+      <a href="terms.html" data-i18n="termsLink">شروط الاستخدام</a>
+      <a class="footer-social-icon" href="https://x.com" target="_blank" rel="noopener" aria-label="X">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="footer-social-icon" href="mailto:raadbadr@gmail.com" aria-label="Email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+      </a>
     </div>
-    <div class="tm-footer-bottom"><p class="tm-footer-copy">© 2026 ThunderMoon. All rights reserved.</p></div>
+    <div class="footer-logo-wrap">
+      <a href="index.html" class="brand-logo brand-logo--xs" style="text-decoration:none;">
+        <img src="assets/laserbeam_logo.png" alt="ThunderMoon" class="brand-logo-img">
+        <span class="brand-logo-text">ThunderMoon</span>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      <span class="footer-copyright-line1" data-i18n="copyrightLine1">© 2026</span>
+      <span class="footer-copyright-line2" data-i18n="copyrightLine2">جميع الحقوق محفوظة</span>
+    </div>
   </footer>
-  <script src="js/main.js"></script>
+
+  <script src="i18n.js"></script>
 </body>
 </html>

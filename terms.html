@@ -1,133 +1,219 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Terms of Use — ThunderMoon games including LaserBeam.">
-  <meta name="theme-color" content="#0A0A14">
-  <title>Terms of Use — ThunderMoon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+  <meta name="theme-color" id="themeColorMeta" content="#070D14">
+  <meta name="description" content="شروط الاستخدام — ThunderMoon وألعابها بما فيها LaserBeam. المشتريات داخل التطبيق، الإعلانات، والمسؤولية.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>شروط الاستخدام | ThunderMoon</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="assets/laserbeam_logo.png">
+  <link rel="apple-touch-icon" href="assets/laserbeam_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="footer.css">
-  <style>
-    .page-hero { padding: 140px 0 30px; }
-    .legal-content { max-width: 800px; margin: 0 auto; }
-    .legal-content h2 { font-size: 1.3rem; margin: 40px 0 12px; color: var(--cyan); }
-    .legal-content h2:first-child { margin-top: 0; }
-    .legal-content p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px; }
-    .legal-content ul { margin: 12px 0 16px; padding-left: 24px; }
-    .legal-content ul li { color: var(--text-dim); font-size: 0.95rem; line-height: 1.8; margin-bottom: 8px; }
-    .legal-content ul li::marker { color: var(--cyan); }
-    .legal-content strong { color: var(--text); }
-    .legal-updated { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-faint); margin-bottom: 32px; }
-    .legal-content a { color: var(--cyan); text-decoration: underline; }
-    @media (max-width: 768px) { .page-hero { padding: 100px 0 20px; } }
-  </style>
 </head>
-<body>
+<body class="has-site-header" data-page="Terms">
   <div class="cosmic-bg"></div>
-  <header class="tm-header" id="header">
-    <div class="tm-header-inner">
-      <a href="index.html" class="tm-logo">
-        <div class="tm-logo-mark"><svg viewBox="0 0 32 32" fill="none"><path d="M22 4L8 16l6 2-4 10 14-12-6-2 4-10z" fill="url(#tm-grad)" stroke="url(#tm-grad)" stroke-width="1.5" stroke-linejoin="round"/><defs><linearGradient id="tm-grad" x1="4" y1="4" x2="28" y2="28"><stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#B026FF"/></linearGradient></defs></svg></div>
-        <span class="tm-logo-text">ThunderMoon</span>
-      </a>
-      <nav class="tm-nav">
-        <ul class="tm-nav-links">
-          <li><a href="index.html#games" class="tm-nav-link">Games</a></li>
-          <li><a href="about.html" class="tm-nav-link">Studio</a></li>
-          <li><a href="blog.html" class="tm-nav-link">Blog</a></li>
-          <li><a href="support.html" class="tm-nav-link">Support</a></li>
-        </ul>
-        <a href="index.html#games" class="tm-nav-cta">Play Now</a>
-      </nav>
-      <button class="tm-burger" id="burger"><span></span><span></span><span></span></button>
+
+  <header class="site-header">
+    <a href="index.html" class="brand-logo brand-logo--xs" style="text-decoration:none;">
+      <img src="assets/laserbeam_logo.png" alt="ThunderMoon" class="brand-logo-img">
+      <span class="brand-logo-text">ThunderMoon</span>
+    </a>
+    <div class="menu-wrap" style="position:relative; margin-inline-start:auto;">
+      <button class="menu-btn" id="langMenuBtn" aria-label="Language">
+        <div class="icon-circle"><span class="icon">🌐</span></div>
+        <span class="menu-text" id="currentLangDisplay">العربية</span>
+      </button>
+      <div class="menu-dropdown" id="langDropdown">
+        <div class="menu-dropdown-item" data-lang="ar"><span class="checkmark" id="check-ar">✓</span><span>العربية</span></div>
+        <div class="menu-dropdown-item" data-lang="en"><span class="checkmark" id="check-en">✓</span><span>English</span></div>
+        <div class="menu-dropdown-item" data-lang="fr"><span class="checkmark" id="check-fr">✓</span><span>Français</span></div>
+        <div class="menu-dropdown-item" data-lang="ur"><span class="checkmark" id="check-ur">✓</span><span>اردو</span></div>
+      </div>
+    </div>
+    <div class="menu-wrap" style="position:relative;">
+      <button class="menu-btn" id="themeMenuBtn" aria-label="Appearance">
+        <div class="icon-circle"><span class="icon" id="themeIcon">🌙</span></div>
+        <span class="menu-text" id="currentThemeDisplay">داكن</span>
+      </button>
+      <div class="menu-dropdown" id="themeDropdown">
+        <div class="menu-dropdown-item" data-theme="light"><span class="checkmark" id="check-light">✓</span><span data-i18n="light">فاتح</span></div>
+        <div class="menu-dropdown-item" data-theme="dark"><span class="checkmark" id="check-dark">✓</span><span data-i18n="dark">داكن</span></div>
+      </div>
     </div>
   </header>
-  <div class="tm-mobile-menu" id="mobileMenu"><a href="index.html#games">Games</a><a href="about.html">Studio</a><a href="blog.html">Blog</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></div>
 
   <section class="page-hero">
     <div class="container">
-      <div class="eyebrow">Legal</div>
-      <h1>Terms of Use</h1>
-      <p class="legal-updated">Last updated: June 21, 2026</p>
+      <div class="eyebrow">ThunderMoon</div>
+      <h1 class="grad-cyan" data-i18n="termsTitle">شروط الاستخدام</h1>
+      <p class="page-hero-sub legal-updated" data-i18n="termsUpdated" style="border-bottom:none; max-width:none;">آخر تحديث: 21 يونيو 2026</p>
     </div>
   </section>
 
-  <section class="section-sm" style="padding-top: 0;">
+  <section class="section" style="padding-top: 0;">
     <div class="container">
       <div class="legal-content">
-        <h2>1. Acceptance of Terms</h2>
-        <p>By downloading, installing, or playing any ThunderMoon game ("the Game"), you agree to be bound by these Terms of Use. If you do not agree, do not use the Game.</p>
+        <p class="legal-updated" data-i18n="termsUpdated">آخر تحديث: 21 يونيو 2026</p>
 
-        <h2>2. License</h2>
-        <p>ThunderMoon grants you a limited, non-exclusive, non-transferable license to use the Game for personal, non-commercial purposes. You may not:</p>
+        <div class="legal-toc">
+          <h4>المحتويات</h4>
+          <ul>
+            <li><a href="#accept">قبول الشروط</a></li>
+            <li><a href="#license">الرخصة</a></li>
+            <li><a href="#ads">الإعلانات وAdMob</a></li>
+            <li><a href="#iap">المشتريات داخل التطبيق</a></li>
+            <li><a href="#account">حساب Supabase</a></li>
+            <li><a href="#conduct">سلوك المستخدم</a></li>
+            <li><a href="#ip">المكية الفكرية</a></li>
+            <li><a href="#liability">حدود المسؤولية</a></li>
+            <li><a href="#updates">تحديثات اللعبة</a></li>
+            <li><a href="#termination">إنهاء</a></li>
+            <li><a href="#law">القانون الحاكم</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+          </ul>
+        </div>
+
+        <h2 id="accept">1. قبول الشروط</h2>
+        <p>بتنزيلك أو استخدامك ألعاب ThunderMoon بما فيها <strong>LaserBeam</strong> ("اللعبة") فإنك توافق على هذه الشروط. إذا لم توافق، لا تنزل أو تستخدم اللعبة.</p>
+        <p>يجب أن يكون عمرك 13 سنة أو أكثر لاستخدام اللعبة. إذا تستخدم اللعبة نيابة عن قاصر، فيجب أن يكون لديك إذن الوالد أو الوصي.</p>
+
+        <h2 id="license">2. الرخصة</h2>
+        <p>نمنحك رخصة محدودة، غير حصرية، غير قابلة للنقل،، قابلة للإلغاء لاستخدام اللعبة للاستخدام الشخصي غير التجاري على جهاز iOS واحد تملكه.</p>
+        <p>لا يكنك:</p>
         <ul>
-          <li>Modify, reverse engineer, or decompile the Game</li>
-          <li>Distribute, sell, or sublicense the Game</li>
-          <li>Use the Game for any commercial purpose without written consent</li>
-          <li>Remove or alter copyright notices</li>
+          <li>نقل أو بيع أو تأجير اللعبة لطرف ثالث.</li>
+          <li>الهندسة العكسية أو تفكيك اللعبة أو محاولة استخراج الكود المصدري.</li>
+          <li>إنشاء أعمال مشتقة بناءً على اللعبة.</li>
+          <li>استخدام اللعبة لأغراض تجارية بدون إذن مكتوب.</li>
+          <li>إزالة أو تغيير إشعارات الملكية أو الحقوق.</li>
         </ul>
 
-        <h2>3. In-App Purchases</h2>
-        <p>The Game may offer in-app purchases ("IAP"). Purchases are processed by Apple through the App Store. All sales are subject to Apple's terms and conditions. Refunds are governed by Apple's refund policy.</p>
-
-        <h2>4. Advertising</h2>
-        <p>The free version of the Game may display advertisements served by Google AdMob. You can remove all advertisements by purchasing the "Remove Ads" in-app purchase.</p>
-
-        <h2>5. User Accounts</h2>
-        <p>You may create an account to sync game progress. You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account.</p>
-
-        <h2>6. Acceptable Use</h2>
-        <p>You agree not to:</p>
+        <h2 id="ads">3. الإعلانات وGoogle AdMob</h2>
+        <p>اللعبة قد تعرض إعلانات بواسطة <strong>Google AdMob</strong>. الإعلانات مقدمة من أطراف ثالثة، ونحن لا نتحكم في محتوها. لا تتفاعل مع الإعلانات إذا كانت تبدو غير لائقة.</p>
         <ul>
-          <li>Cheat, hack, or use third-party tools to manipulate the Game</li>
-          <li>Harass or abuse other users</li>
-          <li>Attempt to disrupt or overload the Game's servers</li>
-          <li>Use the Game in violation of applicable laws</li>
+          <li>يمكنك <strong>إزالة جميع الإعلانات دائماً</strong> عبر شراء "إزالة الإعلانات" داخل التطبيق (لمرة واحدة).</li>
+          <li>بشكل افتراضي، الإعلانات قد تستخدم معرف الجهاز للاستهداف. يكنك التحكم في هذا عبر إطار ATT من Apple (راجع سياسة الخصوصية).</li>
+          <li>نحن لا نتحكم في محتو الإعلانات ولا نتحمل المسؤولية عنها. راجع <a href="https://support.google.com/ads/answer/6145103" target="_blank" rel="noopener">سياسة الإعلانات في Google</a>.</li>
         </ul>
 
-        <h2>7. Disclaimers</h2>
-        <p>The Game is provided "as is" without warranties of any kind. We do not guarantee that the Game will be error-free, uninterrupted, or compatible with all devices.</p>
+        <h2 id="iap">4. المشتريات داخل التطبيق (IAP)</h2>
+        <p>نقدم مشتريات داخل التطبيق معالجة بواسطة <strong>Apple StoreKit</strong>:</p>
+        <ul>
+          <li><strong>"إزالة الإعلانات"</strong> — شراء لمرة واحدة يزيل جميع الإعلانات دائماً.</li>
+        </ul>
+<|code_suffix|>
+        <ul>
+          <li>جميع المشتريات غير قابلة للاسترداد باستثناء ما يلزم بموجب قوانين المستهلك أو إذا كانت المشترية معطوبة.</li>
+          <li>المشترية مرتبطة بحساب Apple ID الخاص بك. يكنك استعادتها على أي جهاز بنفس الحساب.</li>
+          <li>Apple تعالج المعاملات بطريقة آمنة؛ نحن لا نملك أو نحفظ معلومات مالية.</li>
+        </ul>
+        <p>المشتريات خضوع لشروط متجر iOS App Store من Apple. راجع <a href="https://www.apple.com/legal/itunes/us/terms.html" target="_blank" rel="noopener">شروط متجر iOS App Store</a>.</p>
 
-        <h2>8. Limitation of Liability</h2>
-        <p>To the maximum extent permitted by law, ThunderMoon shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Game.</p>
+        <h2 id="account">5. حساب Supabase</h2>
+        <p>يمكنك إنشاء حساب اختياري للوصول إلى مزامنة التقدم السحابي عبر <strong>Supabase</strong>. أنت مسؤول عن:</p>
+        <ul>
+          <li>الحفاظ على سرية معلومات حسابك.</li>
+          <li>جميع النشاط الذي يقع تحت حسابك.</li>
+          <li>ضمان دقة معلومات الحساب المقدمة.</li>
+        </ul>
+        <p>نحتفظ بالحق في تعطيل أو حذف أي حساب يستخدم بطريقة مسيئة. راجع سياسة الخصوصية لمعرفة كيف نعالج بيانات الحساب.</p>
 
-        <h2>9. Intellectual Property</h2>
-        <p>The Game, including all content, graphics, music, and code, is the intellectual property of ThunderMoon. All rights are reserved.</p>
+        <h2 id="conduct">6. سلوك المستخدم</h2>
+        <p>توافق على عدم:</p>
+        <ul>
+          <li>استخدام اللعبة لأغراض غير قانونية أو مخالفة لهذه الشروط.</li>
+          <li>محاولة التدخل في أو تعطيل خوادم Supabase أو خوادم Apple أو خوادم Google.</li>
+          <li>استخدام أدوات آلية (Bots، Macros) للغش أو استغلال اللعبة.</li>
+          <li>تنزيل أو توزيع نسخ معدلة من اللعبة.</li>
+          <li>مشاركة معلومات حساسة أو غير لائقة عبر ميزات اللعبة الاجتماعية (إذا موجودة).</li>
+        </ul>
 
-        <h2>10. Changes to Terms</h2>
-        <p>We may update these Terms at any time. Changes will be posted on this page with an updated date. Continued use of the Game constitutes acceptance of the updated Terms.</p>
+        <h2 id="ip">7. المكية الفكرية</h2>
+        <p>اللعبة وكل محتوها (بما فيها الرسومات، الأصوات، الكود، الاسم "ThunderMoon" و "LaserBeam" والشعار) مملوكة لنا ومحمية بحقوق الملكية الفكرية.</p>
+        <p>Unreal Engine تكنولوجيا مملوكة لEpic Games، Inc. واستخدامها خاضع ل <a href="https://www.unrealengine.com/en-US/eula" target="_blank" rel="noopener"> Unreal Engine EULA</a>. لا نتحمل أي علاقة مع Epic Games أو Apple أو Google أو Supabase.</p>
 
-        <h2>11. Governing Law</h2>
-        <p>These Terms are governed by the laws of Saudi Arabia. Any disputes shall be resolved in the courts of Saudi Arabia.</p>
+        <h2 id="liability">8. حدود المسؤولية</h2>
+        <p>اللعبة مقدمة "كما هي" بدون ضمانات صريحة أو ضمنية. نحن لا نضمن أن:</p>
+        <ul>
+          <li>اللعبة ستعمل دون انقطاع أو خالية من الأخطاء.</li>
+          <li>التقدم المحفوظ سحابياً لن يُفقد أبدًا.</li>
+          <li>اللعبة ستكون متاحة بشكل دائم على متجر التطبيقات.</li>
+        </ul>
+        <p>في أقصى الحالات المسموح بها بموجب القانون، نحن <strong>غير مسؤولين</strong> عن أي:</p>
+        <ul>
+          <li>فقدان البيانات أو التقدم (نوصي بالنسخ الاحتياطي عبر حساب Supabase).</li>
+          <li>أضرار غير مباشرة أو عرضية أو تبعية.</li>
+          <li>أعطال الجهاز أو مشاكل بطارية ناتجة عن استخدام اللعبة.</li>
+          <li>أي خسائر تتجاوز المبلغ الذي دفعته لنا للمشتريات داخل التطبيق.</li>
+        </ul>
 
-        <h2>12. Contact</h2>
-        <p>For questions about these Terms, contact us at <strong><a href="mailto:raadbadr@gmail.com">raadbadr@gmail.com</a></strong>.</p>
+        <h2 id="updates">9. تحديثات اللعبة</h2>
+        <p>نحتفظ بالحق في إصدار تحديثات للعبة في أي وقت. التحديثات قد تشمل:</p>
+        <ul>
+          <li>مستويات جديدة ومحتوى إضافي.</li>
+          <li>إصلاحات الأخطاء وتحسينات الأداء.</li>
+          <li>تغييرات على الميزات أو الميكانيكا.</li>
+          <li>تحديثات هذه الشروط.</li>
+        </ul>
+        <p>بالستمرار في استخدام اللعبة بعد التحديث، فإنك توافق على الإصدار المحدث من هذه الشروط.</p>
+
+        <h2 id="termination">10. إنهاء</h2>
+        <p>نحتفظ بالحق في إنهاء أو تعطيل الوصول إلى اللعبة في أي وقت إذا:</p>
+        <ul>
+          <li>خالفت هذه الشروط.</li>
+          <li>استخدمت اللعبة بطريقة مسيئة.</li>
+          <li>قررنا التوقف عن دعم اللعبة.</li>
+        </ul>
+        <p>عند الإنهاء، يجب حذف اللعبة من جهازك. الأحكام المتعلقة بالملكية الفكرية وحدود المسؤولية تبقى سارية بعد الإنهاء.</p>
+
+        <h2 id="law">11. القانون الحاكم</h2>
+        <p>هذه الشروط تحكمها قوانين الدولة التي يقيم فيها المطوّر. أي نزاعات ستحل عبر المحاكم المختصة في تلك الولة، بدون اعتبار تعارض قوانين.</p>
+
+        <h2 id="contact">12. تواصل معنا</h2>
+        <p>إذا كان لديك أسئلة حول هذه الشروط، راسلنا:</p>
+        <p><strong>ThThunderMoon</strong><br>البريد: <a href="mailto:raadbadr@gmail.com">raadbadr@gmail.com</a><br>وقت الاستجابة: ~48 ساعة</p>
       </div>
     </div>
   </section>
 
-  <footer class="tm-footer">
-    <div class="tm-footer-inner">
-      <div class="tm-footer-brand">
-        <div class="tm-footer-logo"><span class="grad-cyan">ThunderMoon</span></div>
-        <p class="tm-footer-tagline">Indie mobile game studio. Crafting atmospheric experiences where light meets geometry.</p>
-        <div class="tm-social">
-          <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="#" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
-          <a href="mailto:raadbadr@gmail.com" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></a>
-        </div>
-      </div>
-      <div class="tm-footer-col"><h4>Games</h4><ul><li><a href="index.html#games">LaserBeam</a></li><li><a href="#">More Coming</a></li></ul></div>
-      <div class="tm-footer-col"><h4>Studio</h4><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="support.html">Support</a></li></ul></div>
-      <div class="tm-footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+  <footer class="footer">
+    <p class="footer-tagline" data-i18n="footerTagline">استوديو ألعاب موبايل مستقل. نصنع تجارب أجوائية حيث يلتقي الضوء بالهندسة.</p>
+    <div class="footer-links">
+      <a href="index.html#games" data-i18n="gamesLink">الألعاب</a>
+      <a href="about.html" data-i18n="aboutLink">من نحن</a>
+      <a href="blog.html" data-i18n="blogLink">المدونة</a>
+      <a href="support.html" data-i18n="supportLink">الدعم</a>
+      <a href="privacy.html" data-i18n="privacyLink">سياسة الخصوصية</a>
+      <a href="terms.html" data-i18n="termsLink">شروط الاستخدام</a>
+      <a class="footer-social-icon" href="https://x.com" target="_blank" rel="noopener" aria-label="X">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="footer-social-icon" href="mailto:raadbadr@gmail.com" aria-label="Email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+      </a>
     </div>
-    <div class="tm-footer-bottom"><p class="tm-footer-copy">© 2026 ThunderMoon. All rights reserved.</p></div>
+    <div class="footer-logo-wrap">
+      <a href="index.html" class="brand-logo brand-logo--xs" style="text-decoration:none;">
+        <img src="assets/laserbeam_logo.png" alt="ThunderMoon" class="brand-logo-img">
+        <span class="brand-logo-text">ThunderMoon</span>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      <span class="footer-copyright-line1" data-i18n="copyrightLine1">© 2026</span>
+      <span class="footer-copyright-line2" data-i18n="copyrightLine2">جميع الحقوق محفوظة</span>
+    </div>
   </footer>
-  <script src="js/main.js"></script>
+
+  <script src="i18n.js"></script>
 </body>
 </html>
