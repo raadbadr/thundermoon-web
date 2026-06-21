@@ -12,16 +12,36 @@ const BLOCKED_UA = [
 ];
 
 // Suspicious request patterns (SQLi, XSS, path traversal, RCE)
+// Tested against decoded URL — worker decodes before matching
 const SUSPICIOUS_PATTERNS = [
-  /(\bunion\b|\bselect\b|\binsert\b|\bdrop\b|\bupdate\b|\bdelete\b).*(\bfrom\b|\binto\b|\bwhere\b)/i,
-  /(<script|<iframe|javascript:|onerror=|onload=|onclick=)/i,
-  /(\.\.\/|\.\.\\|%2e%2e%2f|%2e%2e\/)/i,
-  /(\/etc\/passwd|\/etc\/shadow|\/proc\/self)/i,
-  /(\$\{.*\}|`.*`|\|.*\|)/i,
-  /(eval\(|exec\(|system\(|passthru\(|shell_exec\()/i,
-  /(base64_decode\(|file_get_contents\(|file_put_contents\()/i,
-  /(\bphp:\/\/|\bdata:\/\/|\bexpect:\/\/)/i,
-  /(\bxss\b|\bcsrf\b|\bsql\b)/i,
+  // SQLi — keywords in sequence (UNION SELECT, DROP TABLE, etc.)
+  /(union\s+select|union\s+all\s+select|select\s+.*\s+from|insert\s+into|drop\s+table|delete\s+from|update\s+.*\s+set)/i,
+  /(\bunion\b.*\bfrom\b|\bselect\b.*\bfrom\b)/i,
+  // XSS
+  /(<script|<iframe|<img[^>]+onerror|javascript:|onerror\s*=|onload\s*=|onclick\s*=|onmouseover\s*=|<svg[^>]+onload)/i,
+  /(<script[^>]*>|<\/script>|<script\s+src)/i,
+  // Path traversal
+  /(\.\.[\/\\]|\.\.%2f|\.\.%5c|%2e%2e%2f|%2e%2e%5c|%2e%2e\.)/i,
+  // LFI/RFI
+  /(\/etc\/passwd|\/etc\/shadow|\/proc\/self\/|\/etc\/group|\/etc\/hosts)/i,
+  // PHP wrappers
+  /(php:\/\/input|php:\/\/filter|data:\/\/|expect:\/\/|zip:\/\/|phar:\/\/)/i,
+  // RCE
+  /(\beval\b\s*\(|\bexec\b\s*\(|\bsystem\b\s*\(|\bpassthru\b\s*\(|\bshell_exec\b\s*\(|\bpopen\b\s*\()/i,
+  // SSRF
+  /(127\.0\.0\.1|localhost|0\.0\.0\.0|169\.254\.169\.254|metadata\.google|169\.254\.)/i,
+  // Command injection
+  /(\$\(|\$\{|\`.*\`|\|.*\|\||&&.*;|\|\|.*;)/i,
+  // SSTI
+  /(\{\{.*\}\}|\{%.*%\}|\{\{.*\}\}|\{\{.*\}|\{.*\}\})/i,
+  // XXE
+  /(!ENTITY|!DOCTYPE.*\[|SYSTEM\s+)/i,
+  // NoSQL injection
+  /(\$\[.*\]|\$gt:|\$ne:|\$regex:|\$where:)/i,
+  // Common exploit signatures
+  /(jndi:|log4j|\$\{jndi:|\$\{lower:|\$\{upper:|\$\{env:)/i,
+  // XML/XSLT
+  /(<\?xml|<!DOCTYPE|xsl:|transform)/i,
 ];
 
 // Rate limiting: max requests per IP per minute
@@ -53,10 +73,13 @@ export default {
       }
     }
 
-    // 3. Check URL path for suspicious patterns
-    const fullPath = url.pathname + url.search;
+    // 3. Check URL path for suspicious patterns (decode first)
+    const rawPath = url.pathname + url.search;
+    let decodedPath = rawPath;
+    try { decodedPath = decodeURIComponent(rawPath); } catch (e) {}
+    const testPath = rawPath + ' ' + decodedPath;
     for (const pattern of SUSPICIOUS_PATTERNS) {
-      if (pattern.test(fullPath)) {
+      if (pattern.test(testPath)) {
         return new Response('Forbidden', { status: 403 });
       }
     }
