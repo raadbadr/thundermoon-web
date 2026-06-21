@@ -89,7 +89,7 @@
   background-clip: text;
 }
 
-/* Dark theme - خلفية كونية، شعار أبيض، HUNDERMOON سماوي */
+/* Dark theme - خلفية كونية، شعار أبيض، THUNDERMOON سماوي */
 [data-theme="dark"] .footer {
   background: #16162a;
   color: #ffffff;
@@ -119,7 +119,7 @@
   filter: brightness(0) invert(1);
 }
 
-/* Light theme - شعار أسود، HUNDERMOON سماوي */
+/* Light theme - شعار أسود، THUNDERMOON سماوي */
 [data-theme="light"] .footer {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(30px);
