@@ -1,11 +1,9 @@
 /* ============================================
-   Footer - موحد لجميع الصفحات
-   عدّل هنا فقط وطبق في index, privacy, refund
-   قواعد الشعار: راجع DESIGN_STANDARDS.md
+   Footer - موحد لجميع الصفحات  (ThunderMoon cosmic)
    ============================================ */
 
 .footer {
-  background: #26333d;
+  background: #16162a;
   color: #ffffff;
   text-align: center;
   padding: 3rem 2rem;
@@ -91,9 +89,9 @@
   background-clip: text;
 }
 
-/* Dark theme - خلفية داكنة، شعار أبيض، ARKINZI أزرق */
+/* Dark theme - خلفية كونية، شعار أبيض، HUNDERMOON سماوي */
 [data-theme="dark"] .footer {
-  background: #26333d;
+  background: #16162a;
   color: #ffffff;
 }
 
@@ -110,8 +108,8 @@
 }
 
 [data-theme="dark"] .footer .brand-logo-text {
-  color: rgb(0, 160, 210);
-  background: linear-gradient(135deg, rgb(0, 160, 210), rgb(40, 180, 220));
+  color: rgb(0, 229, 255);
+  background: linear-gradient(135deg, rgb(0, 229, 255), rgb(102, 242, 255));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -121,7 +119,7 @@
   filter: brightness(0) invert(1);
 }
 
-/* Light theme - شعار أسود، ARKINZI أزرق */
+/* Light theme - شعار أسود، HUNDERMOON سماوي */
 [data-theme="light"] .footer {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(30px);
@@ -131,7 +129,7 @@
 
 [data-theme="light"] .footer a,
 [data-theme="light"] .footer-links a {
-  border-bottom-color: rgba(0, 104, 184, 0.4);
+  border-bottom-color: rgba(0, 140, 200, 0.4);
   color: var(--text-primary) !important;
 }
 
