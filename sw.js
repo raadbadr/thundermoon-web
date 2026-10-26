@@ -1,5 +1,5 @@
 /* ThunderMoon — offline cache (same-origin only) */
-const CACHE_NAME = "thundermoon-offline-v1";
+const CACHE_NAME = "thundermoon-offline-v2";
 
 const PRECACHE_URLS = [
   "./index.html",
@@ -8,6 +8,7 @@ const PRECACHE_URLS = [
   "./support.html",
   "./privacy.html",
   "./terms.html",
+  "./licenses.html",
   "./header.css",
   "./footer.css",
   "./i18n.js",

@@ -105,6 +105,16 @@ const translations = {
     // Terms
     termsTitle: "شروط الاستخدام",
     termsUpdated: "آخر تحديث: 21 يونيو 2026",
+    licensesLink: "التراخيص",
+    licensesTitle: "التراخيص",
+    licensesUpdated: "آخر تحديث: 26 أكتوبر 2026",
+    licensesIntro: "تستعمل ألعابنا برامج وخطوطا مفتوحة المصدر يجيز أصحابها استعمالها بشرط أن ترافقها نصوص تراخيصها. هذه النصوص هنا كما كتبها أصحابها، بالإنجليزية.",
+    licensesGameThunderWall: "جدار الرعد",
+    licensesEngine: "محرك اللعبة",
+    licensesThirdParty: "المكونات التي يحملها المحرك",
+    licensesTexts: "نصوص تراخيص هذه المكونات",
+    licensesPlugins: "الإضافات",
+    licensesFonts: "الخطوط",
     // About page
     aboutPageTitle: "عن ثندرمون",
     aboutPageSubtitle: "مطور واحد. رؤية واحدة. ألعاب حيث يلتقي الضوء بالهندسة.",
@@ -128,7 +138,8 @@ const translations = {
     pageTitleBlog: "المدونة | ثندرمون",
     pageTitleSupport: "الدعم | ثندرمون",
     pageTitlePrivacy: "سياسة الخصوصية | ثندرمون",
-    pageTitleTerms: "شروط الاستخدام | ثندرمون"
+    pageTitleTerms: "شروط الاستخدام | ثندرمون",
+    pageTitleLicenses: "التراخيص | ثندرمون"
   },
   en: {
     language: "Language",
@@ -219,6 +230,16 @@ const translations = {
     privacyUpdated: "Last updated: June 21, 2026",
     termsTitle: "Terms of Use",
     termsUpdated: "Last updated: June 21, 2026",
+    licensesLink: "Licenses",
+    licensesTitle: "Licenses",
+    licensesUpdated: "Last updated: October 26, 2026",
+    licensesIntro: "Our games use open-source software and fonts whose authors allow their use on condition that their license notices go with them. The notices are given here as their authors wrote them.",
+    licensesGameThunderWall: "Thunder Wall",
+    licensesEngine: "Game engine",
+    licensesThirdParty: "Components carried by the engine",
+    licensesTexts: "License texts of these components",
+    licensesPlugins: "Plugins",
+    licensesFonts: "Fonts",
     aboutPageTitle: "About ThunderMoon",
     aboutPageSubtitle: "One developer. One vision. Games where light meets geometry.",
     theStory: "The story",
@@ -238,7 +259,8 @@ const translations = {
     pageTitleBlog: "Blog — ThunderMoon",
     pageTitleSupport: "Support — ThunderMoon",
     pageTitlePrivacy: "Privacy Policy — ThunderMoon",
-    pageTitleTerms: "Terms of Use — ThunderMoon"
+    pageTitleTerms: "Terms of Use — ThunderMoon",
+    pageTitleLicenses: "Licenses — ThunderMoon"
   },
   fr: {
     language: "Langue",
@@ -329,6 +351,16 @@ const translations = {
     privacyUpdated: "Dernière mise à jour: 21 juin 2026",
     termsTitle: "Conditions d'utilisation",
     termsUpdated: "Dernière mise à jour: 21 juin 2026",
+    licensesLink: "Licences",
+    licensesTitle: "Licences",
+    licensesUpdated: "Dernière mise à jour: 26 octobre 2026",
+    licensesIntro: "Nos jeux utilisent des logiciels et des polices open source dont les auteurs autorisent l'usage à condition que leurs avis de licence les accompagnent. Ces avis figurent ici tels que leurs auteurs les ont rédigés, en anglais.",
+    licensesGameThunderWall: "Thunder Wall",
+    licensesEngine: "Moteur du jeu",
+    licensesThirdParty: "Composants inclus dans le moteur",
+    licensesTexts: "Textes des licences de ces composants",
+    licensesPlugins: "Extensions",
+    licensesFonts: "Polices",
     aboutPageTitle: "À propos de ThunderMoon",
     aboutPageSubtitle: "Un développeur. Une vision. Des jeux où la lumière rencontre la géométrie.",
     theStory: "L'histoire",
@@ -348,7 +380,8 @@ const translations = {
     pageTitleBlog: "Blog — ThunderMoon",
     pageTitleSupport: "Support — ThunderMoon",
     pageTitlePrivacy: "Confidentialité — ThunderMoon",
-    pageTitleTerms: "Conditions — ThunderMoon"
+    pageTitleTerms: "Conditions — ThunderMoon",
+    pageTitleLicenses: "Licences — ThunderMoon"
   },
   ur: {
     language: "زبانیں",
@@ -439,6 +472,16 @@ const translations = {
     privacyUpdated: "آخری اپڈیٹ: 21 جون 2026",
     termsTitle: "استعمال کی شرائط",
     termsUpdated: "آخری اپڈیٹ: 21 جون 2026",
+    licensesLink: "لائسنس",
+    licensesTitle: "لائسنس",
+    licensesUpdated: "آخری اپڈیٹ: 26 اکتوبر 2026",
+    licensesIntro: "ہمارے گیم اوپن سورس سافٹ ویئر اور فونٹس استعمال کرتے ہیں جن کے مصنفین انہیں اس شرط پر استعمال کی اجازت دیتے ہیں کہ ان کے لائسنس کی عبارتیں ساتھ ہوں۔ یہ عبارتیں یہاں ویسے ہی دی گئی ہیں جیسے ان کے مصنفین نے انگریزی میں لکھیں۔",
+    licensesGameThunderWall: "جدار الرعد",
+    licensesEngine: "گیم انجن",
+    licensesThirdParty: "انجن میں شامل اجزاء",
+    licensesTexts: "ان اجزاء کے لائسنس کی عبارتیں",
+    licensesPlugins: "پلگ انز",
+    licensesFonts: "فونٹس",
     aboutPageTitle: "تھنڈر مون کے بارے میں",
     aboutPageSubtitle: "ایک ڈیولپر۔ ایک وژن۔ کھیل جہاں روشنی ہندسے سے ملتی ہے۔",
     theStory: "کہانی",
@@ -458,7 +501,8 @@ const translations = {
     pageTitleBlog: "بلاگ | تھنڈر مون",
     pageTitleSupport: "مدد | تھنڈر مون",
     pageTitlePrivacy: "رازداری | تھنڈر مون",
-    pageTitleTerms: "شرائط | تھنڈر مون"
+    pageTitleTerms: "شرائط | تھنڈر مون",
+    pageTitleLicenses: "لائسنس | تھنڈر مون"
   }
 };
 
