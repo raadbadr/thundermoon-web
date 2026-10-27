@@ -1,5 +1,5 @@
 /* ThunderMoon — offline cache (same-origin only) */
-const CACHE_NAME = "thundermoon-offline-v2";
+const CACHE_NAME = "thundermoon-offline-v3";
 
 const PRECACHE_URLS = [
   "./index.html",
@@ -15,7 +15,13 @@ const PRECACHE_URLS = [
   "./Monoton-Regular.ttf",
   "./assets/laserbeam_logo.png",
   "./assets/laserbeam_preview.png",
-  "./assets/laserbeam_launch.png"
+  "./assets/laserbeam_launch.png",
+  "./assets/laserbeam_cover.jpg",
+  "./assets/laserbeam_icon.jpg",
+  "./assets/thunderwall_cover.jpg",
+  "./assets/thunderwall_icon.jpg",
+  "./assets/xoxo_icon.jpg",
+  "./assets/tathakkar_icon.jpg"
 ];
 
 function scopeBase() {

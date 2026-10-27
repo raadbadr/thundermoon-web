@@ -22,7 +22,32 @@ const translations = {
     gameTag: "ألغاز / آركيد",
     laserbeam: "لايزر بيم",
     laserbeamDesc: "وجه أشعة الليزر عبر عالم هندسي مظلم. اقسم، اعكس، وادمج الضوء لحل ألغاز معقدة. كل مستوى دراسة في فيزياء الطيف.",
-    comingSoon: "قريباً",
+    xoxo: "XO_XO",
+    xoxoTag: "لوح / عائلي",
+    xoxoDesc: "لعبة إكس-أو الكلاسيكية. رتب ثلاثة في صف واحد لتفوز. بسيطة وسريعة للعب مع الأصدقاء والعائلة.",
+    tathakkar: "تذكر اللون",
+    tathakkarTag: "ذاكرة / عائلي",
+    tathakkarDesc: "لعبة ذاكرة تتحدى قدرتك على تذكر تسلسل الألوان. بسيطة وممتعة، ومناسبة للأطفال والكبار.",
+    comingSoon: "قريبا",
+    // Home page (games-site look, October 2026)
+    homeGamesTitle: "الألعاب",
+    heroTrust: "ألعابنا مجانية على App Store لأجهزة iPhone وiPad",
+    statPublished: "لعبة على App Store",
+    statBuilding: "لعبة قيد التطوير",
+    statSince: "على App Store منذ",
+    gamesOut: "متاحة الآن",
+    gameFree: "مجانية",
+    twTag: "استراتيجية / محاكاة",
+    thunderwall: "جدار الرعد",
+    twDesc: "دفاع جوي وضربات وجيش وإمداد على خمس خرائط، مع حملة من 11 معركة ومعارك سريعة وقاعدة تبنيها بنفسك.",
+    twSoon: "قريبا على App Store وGoogle Play",
+    lbSoon: "قريبا على App Store",
+    ctaAllTitle: "كل ألعابنا",
+    ctaAllDesc: "صفحة الاستوديو على App Store",
+    ctaAllBtn: "افتح App Store",
+    ctaSupportDesc: "أسئلة شائعة وحلول سريعة لأي مشكلة",
+    ctaSupportBtn: "مركز الدعم",
+    ctaMailDesc: "اقتراح أو مشكلة في لعبة؟ راسلنا مباشرة",
     // About
     aboutTitle: "مستقل بالاختيار، دقيق بالطباع",
     aboutDesc: "ثندرمون استوديو ألعاب موبايل مستقل يركز على تجارب أجوائية. لا فرق، لا لجان — رؤية واحدة تنفذ بإتقان.",
@@ -39,10 +64,10 @@ const translations = {
     valuesSubtitle: "ما نؤمن به",
     v1: "تصميم دقيق",
     v1p: "كل بكسل، كل زاوية، كل تفاعل مقصود. لا حشو، لا ضجيج — الأساسي فقط.",
-    v2: "الأجواء أولاً",
+    v2: "الأجواء أولا",
     v2p: "الألعاب يجب أن تكون أماكن. نبني عوالم تخطفها — مظلمة، كونية، نابضة بالضوء.",
     v3: "موبايل أصيل",
-    v3p: "مبنية للّمس من الأساس. ليست منقولة — لعبة تنتمي للجهاز في جيبك.",
+    v3p: "مبنية للمس من الأساس. ليست منقولة — لعبة تنتمي للجهاز في جيبك.",
     // Blog
     blogTitle: "سجل التطوير وأفكار",
     blogSubtitle: "آخر المقالات",
@@ -65,7 +90,7 @@ const translations = {
     privacyLink: "سياسة الخصوصية",
     termsLink: "شروط الاستخدام",
     gamesLink: "الألعاب",
-    moreComing: "المزيد قريباً",
+    moreComing: "المزيد قريبا",
     statsSectionTitle: "أرقام الاستوديو",
     whyPrefix: "لماذا ",
     whySuffix: "؟",
@@ -156,7 +181,32 @@ const translations = {
     gameTag: "Puzzle / Arcade",
     laserbeam: "LaserBeam",
     laserbeamDesc: "Guide laser beams through a dark geometric world. Split, reflect, and merge light to solve increasingly complex puzzles. Every level is a study in spectral physics.",
+    xoxo: "XO_XO",
+    xoxoTag: "Board / Family",
+    xoxoDesc: "The classic tic-tac-toe. Line up three in a row to win. Simple, quick fun for friends and family.",
+    tathakkar: "Remember the Color",
+    tathakkarTag: "Memory / Family",
+    tathakkarDesc: "A memory game that challenges you to recall color sequences. Simple and fun, great for kids and adults.",
     comingSoon: "Coming Soon",
+    // Home page (games-site look, October 2026)
+    homeGamesTitle: "Games",
+    heroTrust: "Our games are free on the App Store for iPhone and iPad",
+    statPublished: "Games on the App Store",
+    statBuilding: "Games in development",
+    statSince: "On the App Store since",
+    gamesOut: "Out now",
+    gameFree: "Free",
+    twTag: "Strategy / Simulation",
+    thunderwall: "Thunder Wall",
+    twDesc: "Air defence, strikes, an army and supply lines across five maps, with an 11-battle campaign, quick battles and a base you build yourself.",
+    twSoon: "Coming to the App Store and Google Play",
+    lbSoon: "Coming to the App Store",
+    ctaAllTitle: "All our games",
+    ctaAllDesc: "The studio's page on the App Store",
+    ctaAllBtn: "Open the App Store",
+    ctaSupportDesc: "Common questions and quick fixes",
+    ctaSupportBtn: "Support center",
+    ctaMailDesc: "An idea or a problem in a game? Write to us",
     aboutTitle: "Indie by choice, precise by nature",
     aboutDesc: "ThunderMoon is a one-person indie game studio focused on creating atmospheric mobile experiences. No teams, no committees — just a single vision executed with craft.",
     aboutDesc2: "Every game starts from a feeling: the weight of darkness before light arrives. The satisfaction of a perfect angle. The silence between puzzle and solution.",
@@ -277,7 +327,32 @@ const translations = {
     gameTag: "Puzzle / Arcade",
     laserbeam: "LaserBeam",
     laserbeamDesc: "Guidez des faisceaux laser à travers un monde géométrique sombre. Divisez, réfléchissez et fusionnez la lumière pour résoudre des puzzles complexes.",
+    xoxo: "XO_XO",
+    xoxoTag: "Plateau / Famille",
+    xoxoDesc: "Le morpion classique. Alignez trois symboles pour gagner. Simple et amusant, à jouer en famille ou entre amis.",
+    tathakkar: "Souviens-toi des couleurs",
+    tathakkarTag: "Mémoire / Famille",
+    tathakkarDesc: "Un jeu de mémoire qui met au défi votre capacité à retenir des séquences de couleurs. Simple et amusant, pour petits et grands.",
     comingSoon: "Bientôt",
+    // Home page (games-site look, October 2026)
+    homeGamesTitle: "Jeux",
+    heroTrust: "Nos jeux sont gratuits sur l'App Store pour iPhone et iPad",
+    statPublished: "Jeux sur l'App Store",
+    statBuilding: "Jeux en développement",
+    statSince: "Sur l'App Store depuis",
+    gamesOut: "Disponibles",
+    gameFree: "Gratuit",
+    twTag: "Stratégie / Simulation",
+    thunderwall: "Thunder Wall",
+    twDesc: "Défense aérienne, frappes, armée et ravitaillement sur cinq cartes, avec une campagne de 11 batailles, des batailles rapides et une base à bâtir vous-même.",
+    twSoon: "Bientôt sur l'App Store et Google Play",
+    lbSoon: "Bientôt sur l'App Store",
+    ctaAllTitle: "Tous nos jeux",
+    ctaAllDesc: "La page du studio sur l'App Store",
+    ctaAllBtn: "Ouvrir l'App Store",
+    ctaSupportDesc: "Questions fréquentes et solutions rapides",
+    ctaSupportBtn: "Centre d'aide",
+    ctaMailDesc: "Une idée ou un souci dans un jeu ? Écrivez-nous",
     aboutTitle: "Indépendant par choix, précis par nature",
     aboutDesc: "ThunderMoon est un studio de jeux mobiles indépendant d'une seule personne, concentré sur des expériences atmosphériques. Pas d'équipes, pas de comités — une seule vision exécutée avec art.",
     aboutDesc2: "Chaque jeu commence par un sentiment: le poids de l'obscurité avant l'arrivée de la lumière. La satisfaction d'un angle parfait. Le silence entre l'énigme et la solution.",
@@ -398,7 +473,32 @@ const translations = {
     gameTag: "پہیلی / آرکیڈ",
     laserbeam: "لیزر بیم",
     laserbeamDesc: "ایک تاریک ہندسی دنیا میں لیزر شعاعوں کی رہنمائی کریں۔ روشنی کو تقسیم، منعکس اور ضم کریں پیچیدہ پہیلیاں حل کرنے کے لیے۔",
+    xoxo: "XO_XO",
+    xoxoTag: "بورڈ / فیملی",
+    xoxoDesc: "کلاسک ٹک ٹیک ٹو۔ جیتنے کے لیے تین ایک قطار میں لگائیں۔ دوستوں اور خاندان کے ساتھ آسان اور مزے دار۔",
+    tathakkar: "رنگ یاد رکھیں",
+    tathakkarTag: "میموری / فیملی",
+    tathakkarDesc: "ایک میموری گیم جو رنگوں کی ترتیب یاد رکھنے کی صلاحیت کو آزماتی ہے۔ آسان اور دلچسپ، بچوں اور بڑوں کے لیے بہترین۔",
     comingSoon: "جلد آ رہا ہے",
+    // Home page (games-site look, October 2026)
+    homeGamesTitle: "کھیل",
+    heroTrust: "ہمارے کھیل iPhone اور iPad کے لیے App Store پر مفت ہیں",
+    statPublished: "App Store پر کھیل",
+    statBuilding: "زیر تیاری کھیل",
+    statSince: "App Store پر آغاز",
+    gamesOut: "اب دستیاب",
+    gameFree: "مفت",
+    twTag: "حکمت عملی / سمولیشن",
+    thunderwall: "جدار الرعد",
+    twDesc: "پانچ نقشوں پر فضائی دفاع، حملے، فوج اور رسد، 11 معرکوں کی مہم، فوری معرکے اور اپنا تعمیر کردہ اڈہ۔",
+    twSoon: "جلد App Store اور Google Play پر",
+    lbSoon: "جلد App Store پر",
+    ctaAllTitle: "ہمارے تمام کھیل",
+    ctaAllDesc: "App Store پر اسٹوڈیو کا صفحہ",
+    ctaAllBtn: "App Store کھولیں",
+    ctaSupportDesc: "عام سوالات اور فوری حل",
+    ctaSupportBtn: "مدد کا مرکز",
+    ctaMailDesc: "کوئی تجویز یا کسی کھیل میں مسئلہ؟ ہمیں لکھیں",
     aboutTitle: "اپنی مرضی سے آزاد، فطرت سے درست",
     aboutDesc: "تھنڈر مون ایک شخص کا آزاد گیم اسٹوڈیو ہے جو موبائل پر ماحولیاتی تجربات بنانے پر مرکوز ہے۔ کوئی ٹیمیں نہیں — ایک ہی وژن۔",
     aboutDesc2: "ہر کھیل ایک احساس سے شروع ہوتا ہے: روشنی آنے سے پہلے تاریکی کا وزن۔ ایک کامل زاویے کی اطمینان۔ پہیلی اور حل کے درمیان خاموشی۔",
@@ -534,6 +634,11 @@ function setLang(l) {
     }
   });
 
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const k = el.dataset.i18nPlaceholder;
+    if (translations[l] && translations[l][k]) el.placeholder = translations[l][k];
+  });
+
   const display = document.getElementById("currentLangDisplay");
   if (display) display.textContent = langNames[l] || l;
 
@@ -556,7 +661,10 @@ function setTheme(t) {
   document.documentElement.dataset.theme = t;
 
   const themeColorMeta = document.getElementById("themeColorMeta");
-  if (themeColorMeta) themeColorMeta.content = t === "dark" ? "#0A0A14" : "#0068b8";
+  if (themeColorMeta) {
+    const pageBar = getComputedStyle(document.documentElement).getPropertyValue("--theme-bar").trim();
+    themeColorMeta.content = pageBar || (t === "dark" ? "#0A0A14" : "#0068b8");
+  }
 
   const icon = document.getElementById("themeIcon");
   if (icon) icon.textContent = t === "dark" ? "🌙" : "☀️";
