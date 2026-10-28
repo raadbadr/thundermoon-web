@@ -147,3 +147,9 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Filled buttons readable in both looks: dark words on the dark look's bright cyan, white on a deeper blue in the light */
+[data-theme="dark"] .back-btn,
+[data-theme="dark"] .waitlist-btn { color: #0A0A14; }
+[data-theme="light"] .back-btn,
+[data-theme="light"] .waitlist-btn { background: linear-gradient(135deg, #005f99, #0077b8); color: #ffffff; }

@@ -58,7 +58,9 @@
     [data-theme="dark"] .blog-card { box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
     .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px var(--primary-shadow); border-color: var(--primary); }
     .blog-date { font-size: 0.75rem; color: var(--secondary); letter-spacing: 0.05em; }
-    .blog-tag { font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; }
+    .blog-tag { font-size: 0.8rem; font-weight: 600; color: var(--accent); }
+    [dir="ltr"] .blog-tag { letter-spacing: 0.1em; text-transform: uppercase; }
+    [data-theme="light"] .blog-tag { color: #00754a; }
     .blog-card h3 { font-size: 1.15rem; color: var(--text-primary); }
     .blog-card p { font-size: 0.9rem; color: var(--text-secondary); flex: 1; }
     .blog-read { font-size: 0.8rem; color: var(--primary); font-weight: 600; }
@@ -100,22 +102,22 @@
     <div class="blog-grid">
       <a href="blog.html" class="blog-card">
         <span class="blog-date">2026.06.21</span>
-        <span class="blog-tag">Devlog</span>
+        <span class="blog-tag" data-i18n="tagDevlog">سجل التطوير</span>
         <h3 data-i18n="blog1">لايزر بيم: من الفكرة إلى متجر التطبيقات</h3>
         <p data-i18n="blog1d">رحلة بناء لعبة ألغاز ليزر في أنريل إنجن 5 — من النموذج الأول إلى بناء iOS جاهز للإنتاج.</p>
         <span class="blog-read" data-i18n="readArticle">اقرأ المقال →</span>
       </a>
       <a href="blog.html" class="blog-card">
         <span class="blog-date">2026.06.15</span>
-        <span class="blog-tag">Design</span>
+        <span class="blog-tag" data-i18n="tagDesign">تصميم</span>
         <h3 data-i18n="blog2">الهندسة الطيفية: فلسفة التصميم</h3>
         <p data-i18n="blog2d">كيف تشكل العتمة والضوء والهندسة الدقيقة كل قرار في ألعابنا. غوص عميق في اللغة البصرية.</p>
         <span class="blog-read" data-i18n="readArticle">اقرأ المقال →</span>
       </a>
       <a href="blog.html" class="blog-card">
         <span class="blog-date">2026.06.10</span>
-        <span class="blog-tag">Technical</span>
-        <h3 data-i18n="blog3">العرض المؤجل للموبايل في UE5</h3>
+        <span class="blog-tag" data-i18n="tagTechnical">تقني</span>
+        <h3 data-i18n="blog3">العرض المؤجل على الهاتف المحمول في UE5</h3>
         <p data-i18n="blog3d">تفصيل تقني: تفعيل مسار التظليل المؤجل للجوال لإضاءة فورية على iOS دون إذابة البطارية.</p>
         <span class="blog-read" data-i18n="readArticle">اقرأ المقال →</span>
       </a>

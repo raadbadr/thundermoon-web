@@ -7,7 +7,7 @@
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; worker-src 'self' blob:;">
   <meta name="theme-color" content="#1a1a28" id="themeColorMeta">
-  <meta name="description" content="ThunderMoon - استوديو ألعاب موبايل مستقل. ألعاب أجوائية حيث يلتقي الضوء بالهندسة.">
+  <meta name="description" content="ThunderMoon - استوديو مستقل لألعاب الهاتف المحمول. ألعاب أجوائية حيث يلتقي الضوء بالهندسة.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>ThunderMoon | Indie Game Studio</title>
@@ -49,14 +49,6 @@
     a { color: inherit; }
     /* ============================================ */
 
-    /* Monoton Font - Local */
-    @font-face {
-      font-family: 'Monoton';
-      src: url('Monoton-Regular.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
     
     /* ThunderMoon - NeumorphicTheme - cosmic dark default */
     :root {
@@ -546,6 +538,22 @@
       transform: translateY(-2px) scale(1.02);
     }
     
+    /* The game cards: icon, kind, name, words, then the game's own App Store badge */
+    .game-card { display: flex; flex-direction: column; }
+    .game-card p { flex: 1; }
+    .feature-icon-wrapper .game-icon { width: 72%; height: 72%; object-fit: cover; border-radius: 14px; }
+    /* LaserBeam's wordmark is wide and pale: a wider dark tile in both looks so it reads */
+    .provider-features .feature-card.game-card--soon .feature-icon-wrapper { width: 200px; max-width: 100%; background: #0A0A14; }
+    .feature-icon-wrapper .game-icon--wide { width: 88%; height: 70%; object-fit: contain; border-radius: 0; }
+    .game-tag { display: inline-block; font-size: 0.8rem; font-weight: 600; color: var(--accent); margin-bottom: 0.25rem; }
+    [data-theme="light"] .game-tag { color: #00754a; }
+    .game-cta { display: inline-flex; align-self: center; margin-top: 1rem; border-radius: 8px; transition: transform 0.25s ease; }
+    .game-cta:hover { transform: translateY(-2px); }
+    .game-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .game-cta-badge { height: 44px; width: auto; max-width: 100%; display: block; }
+    .game-card--soon { opacity: 0.8; }
+    .game-soon { margin-top: 1rem; }
+
     /* The App Store and newsletter card: two balanced halves side by side, stacked on a phone */
     .download-section {
       margin-top: 0.75rem;
@@ -2952,8 +2960,8 @@
       </div>
       <p class="tagline" data-i18n="tagline">الألعاب حيث يلتقي الضوء بالهندسة</p>
       <div class="cta">
-        <a href="#games" class="btn btn-primary" data-i18n="exploreGames">
-          استكشف الألعاب
+        <a href="#games" class="btn btn-primary">
+          <span data-i18n="exploreGames">استكشف الألعاب</span>
           <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
         </a>
         <a href="about.html" class="btn btn-secondary" data-i18n="ourStory">قصتنا</a>
@@ -3028,33 +3036,49 @@
             <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" fill="currentColor"/>
           </svg>
         </div>
-        <h3 data-i18n="v3">موبايل أصيل</h3>
+        <h3 data-i18n="v3">صنعت للهاتف</h3>
         <p data-i18n="v3p">مبنية للمس من الأساس. ليست منقولة — لعبة تنتمي للجهاز في جيبك.</p>
       </div>
     </div>
 
-    <!-- Featured Game: LaserBeam -->
+    <!-- Featured games: published on the App Store -->
     <h3 class="provider-section-title" data-i18n="featuredGames">ألعاب مميزة</h3>
     <div class="features-grid provider-features">
-      <div class="feature-card">
+      <div class="feature-card game-card">
         <div class="feature-icon-wrapper">
-          <img src="assets/laserbeam_logo.png" alt="LaserBeam" class="feature-icon-svg" style="width:48px;height:48px;object-fit:contain;border-radius:12px;">
+          <img src="assets/xoxo_icon.jpg" alt="XO_XO" class="feature-icon-svg game-icon" loading="lazy">
         </div>
-        <span class="platform-stat-label" style="display:inline-block;font-size:0.75rem;color:var(--accent);margin-bottom:0.25rem;" data-i18n="gameTag">ألغاز / آركيد</span>
-        <h3 data-i18n="laserbeam">لايزر بيم</h3>
-        <p data-i18n="laserbeamDesc">وجه أشعة الليزر عبر عالم هندسي مظلم. اقسم، اعكس، وادمج الضوء لحل ألغاز معقدة. كل مستوى دراسة في فيزياء الطيف.</p>
+        <span class="game-tag" data-i18n="xoxoTag">لوح / عائلي</span>
+        <h3 data-i18n="xoxo">XO_XO</h3>
+        <p data-i18n="xoxoDesc">لعبة إكس-أو الكلاسيكية. رتب ثلاثة في صف واحد لتفوز. بسيطة وسريعة للعب مع الأصدقاء والعائلة.</p>
+        <a href="https://apps.apple.com/app/id1078779584" target="_blank" rel="noopener noreferrer" class="game-cta" aria-label="XO_XO App Store">
+          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/ar-ar" alt="App Store" class="game-cta-badge" data-store-badge loading="lazy">
+        </a>
+      </div>
+      <div class="feature-card game-card">
+        <div class="feature-icon-wrapper">
+          <img src="assets/tathakkar_icon.jpg" alt="تذكر اللون" class="feature-icon-svg game-icon" loading="lazy">
+        </div>
+        <span class="game-tag" data-i18n="tathakkarTag">ذاكرة / عائلي</span>
+        <h3 data-i18n="tathakkar">تذكر اللون</h3>
+        <p data-i18n="tathakkarDesc">لعبة ذاكرة تتحدى قدرتك على تذكر تسلسل الألوان. بسيطة وممتعة، ومناسبة للأطفال والكبار.</p>
+        <a href="https://apps.apple.com/app/id1398143591" target="_blank" rel="noopener noreferrer" class="game-cta" aria-label="تذكر اللون App Store">
+          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/ar-ar" alt="App Store" class="game-cta-badge" data-store-badge loading="lazy">
+        </a>
       </div>
     </div>
 
-    <!-- Coming Soon -->
+    <!-- Coming soon: LaserBeam (not published yet) -->
     <h3 class="provider-section-title" data-i18n="moreComing">المزيد قريبا</h3>
     <div class="features-grid provider-features">
-      <div class="feature-card" style="opacity:0.7;">
+      <div class="feature-card game-card game-card--soon">
         <div class="feature-icon-wrapper">
-          <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 5H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" fill="currentColor"/></svg>
+          <img src="assets/laserbeam_logo.png" alt="LaserBeam" class="feature-icon-svg game-icon game-icon--wide" loading="lazy">
         </div>
-        <h3 data-i18n="comingSoon">قريبا</h3>
-        <p data-i18n="laserbeamTagline">ألغاز الليزر في عالم هندسي مظلم</p>
+        <span class="game-tag" data-i18n="gameTag">ألغاز / آركيد</span>
+        <h3 data-i18n="laserbeam">لايزر بيم</h3>
+        <p data-i18n="laserbeamDesc">وجه أشعة الليزر عبر عالم هندسي مظلم. اقسم، اعكس، وادمج الضوء لحل ألغاز معقدة. كل مستوى دراسة في فيزياء الطيف.</p>
+        <span class="coming-soon game-soon" data-i18n="comingSoon">قريبا</span>
       </div>
     </div>
 
