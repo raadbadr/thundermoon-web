@@ -2,6 +2,15 @@ name = "thundermoon"
 compatibility_date = "2026-06-21"
 main = "worker.js"
 
+# نطاقا الموقع — يربطان تلقائيا عند النشر (Custom Domain)، على طريقة موقع مستر زاهي.
+# كانا على مشروع Cloudflare Pages باسم thundermoon حتى 2026-10-28، ثم نقلا الى هذا الـ Worker.
+routes = [
+  { pattern = "raadbadr.com", custom_domain = true },
+  { pattern = "www.raadbadr.com", custom_domain = true }
+]
+
 [assets]
 directory = "./"
+# Expose the assets binding to the Worker. Without this line env.ASSETS is
+# undefined inside the Worker.
 binding = "ASSETS"

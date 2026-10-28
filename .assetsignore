@@ -1,5 +1,23 @@
-.git
+# Files excluded from the public static-assets upload.
+# Keep this list tight: anything NOT listed here is downloadable from
+# raadbadr.com by anyone.
+
+# Tooling and infrastructure — never public
 .wrangler
+.git
+.gitignore
+.github
+.claude
 node_modules
 .dev.vars
-.gitignore
+
+# Worker source — bundled separately via `main`, must not be served raw
+worker.js
+
+# Internal docs (README, rules, design notes)
+*.md
+
+# اعدادات المشروع — ليست جزءا من الموقع
+wrangler.toml
+.DS_Store
+.assetsignore
