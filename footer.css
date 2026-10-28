@@ -151,3 +151,17 @@
 /* The «الرئيسية» button readable in both looks: dark words on the dark look's bright cyan, white on a deeper blue in the light */
 [data-theme="dark"] .back-btn { color: #0A0A14; }
 [data-theme="light"] .back-btn { background: linear-gradient(135deg, #005f99, #0077b8); color: #ffffff; }
+
+/* The studio's logo: the dark look's file or the light look's, whichever the page shows */
+[data-theme="dark"] .logo-for-light,
+[data-theme="light"] .logo-for-dark { display: none; }
+.footer-logo { height: 1.3em; width: auto; display: inline-block; vertical-align: middle; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

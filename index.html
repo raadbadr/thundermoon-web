@@ -12,6 +12,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>ThunderMoon | Indie Game Studio</title>
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="assets/thundermoon_mark.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/thundermoon_icon_192.png">
+  <link rel="apple-touch-icon" href="assets/thundermoon_icon_180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Monoton&display=swap" rel="stylesheet">
@@ -3110,6 +3113,17 @@
     .hero-brand .logo-word--accent {
       filter: drop-shadow(0 0 22px rgba(var(--primary-rgb), 0.55));
     }
+    /* the studio's logo in the hero: as wide as the name was (about 9.8 of its font sizes), the same glow */
+    .hero-logo {
+      display: block;
+      width: min(860px, calc(100vw - 3rem));
+      height: auto;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 22px rgba(var(--primary-rgb), 0.45));
+    }
+    [data-theme="light"] .hero-logo { filter: drop-shadow(0 6px 18px rgba(var(--primary-rgb), 0.22)); }
+    /* the wordmark as tall as the name's letters were */
+    .why-wordmark { height: 0.95em; width: auto; display: block; }
     [data-theme="dark"] .hero-brand .logo-word:not(.logo-word--accent) {
       text-shadow: 0 0 26px rgba(var(--secondary-rgb), 0.35);
     }
@@ -3124,6 +3138,9 @@
       justify-content: center;
       gap: 0.3em;
     }
+    /* the question mark sits against the name; French puts its space before it */
+    .why-title .why-suffix { margin-inline-start: -0.22em; }
+    html[lang="fr"] .why-title .why-suffix { margin-inline-start: 0; }
     /* «Pourquoi» is the longest prefix: the title stays on one line inside a phone or tablet */
     html[lang="fr"] .why-title { font-size: clamp(1rem, 4.4vw, 2.8rem); }
 
@@ -3622,7 +3639,7 @@
   <section class="hero">
     <div class="hero-content">
       <div class="logo-with-text">
-        <h1 class="hero-brand brand-name" aria-label="THUNDERMOON"><span class="logo-word">THUNDER</span><span class="logo-word logo-word--accent">MOON</span></h1>
+        <h1 class="hero-brand" aria-label="THUNDERMOON"><img class="hero-logo logo-for-dark" src="assets/thundermoon_logo_dark.svg" alt="" width="1306" height="170"><img class="hero-logo logo-for-light" src="assets/thundermoon_logo_light.svg" alt="" width="1306" height="170"><span class="visually-hidden">THUNDERMOON</span></h1>
       </div>
       <p class="tagline" data-i18n="tagline">الألعاب حيث يلتقي الضوء بالهندسة</p>
       <p class="hero-trust"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.5 6h9a5.5 5.5 0 0 1 5.38 6.6l-.9 4.4a2.5 2.5 0 0 1-4.3 1.2L14.6 16H9.4l-2.08 2.2a2.5 2.5 0 0 1-4.3-1.2l-.9-4.4A5.5 5.5 0 0 1 7.5 6zM7 9v1.5H5.5v2H7V14h2v-1.5h1.5v-2H9V9H7zm8.5 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm2 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg><span data-i18n="heroTrust">ألعابنا مجانية على App Store لأجهزة iPhone وiPad</span></p>
@@ -3733,7 +3750,7 @@
   <section class="features" id="studio">
     <h2 class="section-title why-title">
       <span class="why-brand-font" data-i18n="whyPrefix">لماذا </span>
-      <span class="brand-logo brand-logo--sm"><span class="brand-name"><span class="logo-word">THUNDER</span><span class="logo-word logo-word--accent">MOON</span></span></span>
+      <span class="brand-logo brand-logo--sm"><img class="why-wordmark logo-for-dark" src="assets/thundermoon_wordmark_dark.svg" alt="THUNDERMOON" width="1092" height="114"><img class="why-wordmark logo-for-light" src="assets/thundermoon_wordmark_light.svg" alt="THUNDERMOON" width="1092" height="114"></span>
       <span class="why-suffix" data-i18n="whySuffix">؟</span>
     </h2>
     <div class="features-grid">
@@ -3802,7 +3819,7 @@
     </p>
     <p class="footer-copyright">
       <span data-i18n="copyrightLine2">جميع الحقوق محفوظة</span>
-      <span> <span class="brand-logo brand-logo--xs"><span class="brand-name"><span class="logo-word">THUNDER</span><span class="logo-word logo-word--accent">MOON</span></span></span> <span data-i18n="copyrightLine1">© 2026</span></span>
+      <span> <span class="brand-logo brand-logo--xs"><img class="footer-logo logo-for-dark" src="assets/thundermoon_logo_dark.svg" alt="THUNDERMOON" width="1306" height="170"><img class="footer-logo logo-for-light" src="assets/thundermoon_logo_light.svg" alt="THUNDERMOON" width="1306" height="170"></span> <span data-i18n="copyrightLine1">© 2026</span></span>
     </p>
   </footer>
 

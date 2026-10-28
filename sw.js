@@ -1,5 +1,5 @@
 /* ThunderMoon — offline cache (same-origin only) */
-const CACHE_NAME = "thundermoon-offline-v5";
+const CACHE_NAME = "thundermoon-offline-v6";
 
 const PRECACHE_URLS = [
   "./index.html",
@@ -12,6 +12,13 @@ const PRECACHE_URLS = [
   "./header.css",
   "./footer.css",
   "./i18n.js",
+  "./assets/thundermoon_logo_dark.svg",
+  "./assets/thundermoon_logo_light.svg",
+  "./assets/thundermoon_wordmark_dark.svg",
+  "./assets/thundermoon_wordmark_light.svg",
+  "./assets/thundermoon_mark.svg",
+  "./assets/thundermoon_icon_180.png",
+  "./assets/thundermoon_icon_192.png",
   "./assets/laserbeam_logo.png",
   "./assets/xoxo_icon.jpg",
   "./assets/tathakkar_icon.jpg",
