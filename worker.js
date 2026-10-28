@@ -79,7 +79,7 @@ export default {
     try {
       decodedPath = decodeURIComponent(rawPath);
       decodedPath = decodedPath.replace(/\+/g, ' '); // form-encoded + → space
-    } catch (e) {}
+    } catch (error) {}
     const testPath = rawPath + ' ' + decodedPath;
     for (const pattern of SUSPICIOUS_PATTERNS) {
       if (pattern.test(testPath)) {
@@ -131,7 +131,7 @@ export default {
         const newResponse = new Response(newData, { headers: { 'Content-Type': 'application/json' } });
         ctx.waitUntil(cache.put(cacheKey, newResponse.clone()));
       }
-    } catch (e) {
+    } catch (error) {
       // Rate limiting is best-effort — don't block on errors
     }
 

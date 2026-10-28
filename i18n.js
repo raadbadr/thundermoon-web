@@ -22,7 +22,7 @@ const translations = {
     gameTag: "ألغاز / آركيد",
     laserbeam: "لايزر بيم",
     laserbeamDesc: "وجه أشعة الليزر عبر عالم هندسي مظلم. اقسم، اعكس، وادمج الضوء لحل ألغاز معقدة. كل مستوى دراسة في فيزياء الطيف.",
-    comingSoon: "قريباً",
+    comingSoon: "قريبا",
     // About
     aboutTitle: "مستقل بالاختيار، دقيق بالطباع",
     aboutDesc: "ثندرمون استوديو ألعاب موبايل مستقل يركز على تجارب أجوائية. لا فرق، لا لجان — رؤية واحدة تنفذ بإتقان.",
@@ -39,10 +39,10 @@ const translations = {
     valuesSubtitle: "ما نؤمن به",
     v1: "تصميم دقيق",
     v1p: "كل بكسل، كل زاوية، كل تفاعل مقصود. لا حشو، لا ضجيج — الأساسي فقط.",
-    v2: "الأجواء أولاً",
+    v2: "الأجواء أولا",
     v2p: "الألعاب يجب أن تكون أماكن. نبني عوالم تخطفها — مظلمة، كونية، نابضة بالضوء.",
     v3: "موبايل أصيل",
-    v3p: "مبنية للّمس من الأساس. ليست منقولة — لعبة تنتمي للجهاز في جيبك.",
+    v3p: "مبنية للمس من الأساس. ليست منقولة — لعبة تنتمي للجهاز في جيبك.",
     // Blog
     blogTitle: "سجل التطوير وأفكار",
     blogSubtitle: "آخر المقالات",
@@ -54,7 +54,7 @@ const translations = {
     blog3d: "تفصيل تقني: تفعيل مسار التظليل المؤجل للجوال لإضاءة فورية على iOS دون إذابة البطارية.",
     readArticle: "اقرأ المقال",
     // CTA
-    ctaTitle: "ابقَ في المدار",
+    ctaTitle: "ابق في المدار",
     ctaDesc: "تابع ثندرمون لتحديثات الألعاب وسجل التطوير والإصدارات الجديدة. لا إزعاج — إشارة فقط.",
     followX: "تابع على X",
     getSupport: "احصل على الدعم",
@@ -65,14 +65,17 @@ const translations = {
     privacyLink: "سياسة الخصوصية",
     termsLink: "شروط الاستخدام",
     gamesLink: "الألعاب",
-    moreComing: "المزيد قريباً",
+    moreComing: "المزيد قريبا",
     statsSectionTitle: "أرقام الاستوديو",
     whyPrefix: "لماذا ",
     whySuffix: "؟",
-    availableNow: "متوفر الآن · جرّب",
+    availableNow: "متوفر الآن · جرب",
     newsletterSubmit: "اشترك",
+    scanToOpen: "امسح الرمز بكاميرا هاتفك",
+    newsletterMailSubject: "اشتراك في أخبار ثندرمون",
+    newsletterMailBody: "أرجو إضافة بريدي إلى قائمة أخبار ثندرمون: {email}",
+    newsletterNote: "فتح بريدك رسالة الاشتراك: أرسلها لتصلك أخبارنا.",
     newsletterPlaceholder: "بريدك الإلكتروني",
-    newsletterSuccess: "تم الاشتراك! سنبقيك في المدار.",
     playLaserbeam: "العب لايزر بيم",
     laserbeamTagline: "ألغاز الليزر في عالم هندسي مظلم",
     studio: "الاستوديو",
@@ -89,9 +92,9 @@ const translations = {
     faq2q: "كيف أزيل الإعلانات؟",
     faq2a: "يمكنك إزالة جميع الإعلانات بشكل دائم عبر شراء لمرة واحدة داخل التطبيق. اضغط زر \"إزالة الإعلانات\" في إعدادات اللعبة.",
     faq3q: "اللعبة تتعطل عند الفتح — ماذا أفعل؟",
-    faq3a: "جرّب: (1) أغلق التطبيق وأعد فتحه. (2) أعد تشغيل جهازك. (3) تأكد من أحدث إصدار iOS. (4) إذا استمرت المشكلة، تواصل معنا.",
-    faq4q: "هل تُحفظ تقدمي؟",
-    faq4a: "نعم. تقدمك محفوظ محلياً وعلى حسابك إذا سجلت الدخول. عند إعادة التثبيت، سجل بنفس الحساب لاستعادة التقدم.",
+    faq3a: "جرب: (1) أغلق التطبيق وأعد فتحه. (2) أعد تشغيل جهازك. (3) تأكد من أحدث إصدار iOS. (4) إذا استمرت المشكلة، تواصل معنا.",
+    faq4q: "هل تحفظ تقدمي؟",
+    faq4a: "نعم. تقدمك محفوظ محليا وعلى حسابك إذا سجلت الدخول. عند إعادة التثبيت، سجل بنفس الحساب لاستعادة التقدم.",
     faq5q: "كيف أبلغ عن خطأ؟",
     faq5a: "راسلنا على raadbadr@gmail.com مع وصف الخطأ، موديل جهازك، إصدار iOS، وخطوات إعادة الإنتاج.",
     faq6q: "هل ستكون هناك مستويات جديدة؟",
@@ -199,8 +202,11 @@ const translations = {
     whySuffix: "?",
     availableNow: "Available now · Try it",
     newsletterSubmit: "Subscribe",
+    scanToOpen: "Scan with your phone's camera",
+    newsletterMailSubject: "Subscribe to ThunderMoon news",
+    newsletterMailBody: "Please add my address to the ThunderMoon news list: {email}",
+    newsletterNote: "Your mail app opened the subscription message: send it to get our news.",
     newsletterPlaceholder: "Your email",
-    newsletterSuccess: "Subscribed! We'll keep you in orbit.",
     playLaserbeam: "Play LaserBeam",
     laserbeamTagline: "Laser puzzles in a dark geometric world",
     studio: "Studio",
@@ -320,8 +326,11 @@ const translations = {
     whySuffix: " ?",
     availableNow: "Disponible · Essayez",
     newsletterSubmit: "S'abonner",
+    scanToOpen: "Scannez avec l'appareil photo de votre téléphone",
+    newsletterMailSubject: "Inscription aux nouvelles de ThunderMoon",
+    newsletterMailBody: "Merci d'ajouter mon adresse à la liste des nouvelles de ThunderMoon : {email}",
+    newsletterNote: "Votre messagerie a ouvert le message d'inscription : envoyez-le pour recevoir nos nouvelles.",
     newsletterPlaceholder: "Votre email",
-    newsletterSuccess: "Inscrit ! On vous garde en orbite.",
     playLaserbeam: "Jouer à LaserBeam",
     laserbeamTagline: "Puzzles laser dans un monde géométrique sombre",
     studio: "Studio",
@@ -441,8 +450,11 @@ const translations = {
     whySuffix: "؟",
     availableNow: "دستیاب · آزمائیں",
     newsletterSubmit: "سبسکرائب",
+    scanToOpen: "اپنے فون کے کیمرے سے اسکین کریں",
+    newsletterMailSubject: "تھنڈر مون کی خبروں کی رکنیت",
+    newsletterMailBody: "براہ کرم میرا پتہ تھنڈر مون کی خبروں کی فہرست میں شامل کریں: {email}",
+    newsletterNote: "آپ کی ای میل ایپ میں رکنیت کا پیغام کھل گیا ہے: ہماری خبریں پانے کے لیے اسے بھیج دیں۔",
     newsletterPlaceholder: "آپ کا ای میل",
-    newsletterSuccess: "سبسکرائب ہو گیا! ہم آپ کو مدار میں رکھیں گے۔",
     playLaserbeam: "لیزر بیم کھیلیں",
     laserbeamTagline: "تاریک ہندسی دنیا میں لیزر پہیلیاں",
     studio: "اسٹوڈیو",
@@ -514,62 +526,80 @@ const langTitles = {
   ur: translations.ur.pageTitleHome
 };
 
+// Apple's official App Store badge, unaltered, in the page's language: the white one on the dark look, the black on the light
+const STORE_BADGE_LOCALES = { ar: "ar-ar", en: "en-us", fr: "fr-fr", ur: "ur-in" };
+function updateStoreBadges() {
+  const locale = STORE_BADGE_LOCALES[getLang()] || "en-us";
+  const colour = getTheme() === "dark" ? "white" : "black";
+  document.querySelectorAll("img[data-store-badge]").forEach(badge => {
+    badge.src = "https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/" + colour + "/" + locale;
+  });
+}
+
 function getLang() { return localStorage.getItem("thundermoon_lang") || "ar"; }
 function getTheme() { return localStorage.getItem("thundermoon_theme") || "dark"; }
 
-function setLang(l) {
-  localStorage.setItem("thundermoon_lang", l);
-  document.documentElement.lang = l;
-  document.documentElement.dir = (l === "ar" || l === "ur") ? "rtl" : "ltr";
+function setLang(language) {
+  localStorage.setItem("thundermoon_lang", language);
+  document.documentElement.lang = language;
+  document.documentElement.dir = (language === "ar" || language === "ur") ? "rtl" : "ltr";
 
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const k = el.dataset.i18n;
-    if (translations[l] && translations[l][k]) {
-      if (el.children.length > 0) {
-        const textSpan = Array.from(el.children).find(child => child.hasAttribute('data-i18n'));
-        if (textSpan) textSpan.textContent = translations[l][k];
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    if (translations[language] && translations[language][key]) {
+      if (element.children.length > 0) {
+        const textSpan = Array.from(element.children).find(child => child.hasAttribute('data-i18n'));
+        if (textSpan) textSpan.textContent = translations[language][key];
       } else {
-        el.textContent = translations[l][k];
+        element.textContent = translations[language][key];
       }
     }
   });
 
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(field => {
+    const text = translations[language] && translations[language][field.dataset.i18nPlaceholder];
+    if (text) field.placeholder = text;
+  });
+  updateStoreBadges();
+
   const display = document.getElementById("currentLangDisplay");
-  if (display) display.textContent = langNames[l] || l;
+  if (display) display.textContent = langNames[language] || language;
 
   ["ar", "en", "fr", "ur"].forEach(code => {
-    const el = document.getElementById("check-" + code);
-    if (el) el.style.display = l === code ? "inline" : "none";
+    const element = document.getElementById("check-" + code);
+    if (element) element.style.display = language === code ? "inline" : "none";
   });
 
   const currentTheme = getTheme();
-  const themeText = currentTheme === "dark" ? translations[l].dark : translations[l].light;
+  const themeText = currentTheme === "dark" ? translations[language].dark : translations[language].light;
   const themeDisplay = document.getElementById("currentThemeDisplay");
   if (themeDisplay) themeDisplay.textContent = themeText;
 
-  const titleKey = "pageTitle" + (document.body.dataset.page || "Home").replace(/^./, c => c.toUpperCase());
-  if (translations[l][titleKey]) document.title = translations[l][titleKey];
+  const titleKey = "pageTitle" + (document.body.dataset.page || "Home").replace(/^./, letter => letter.toUpperCase());
+  if (translations[language][titleKey]) document.title = translations[language][titleKey];
 }
 
-function setTheme(t) {
-  localStorage.setItem("thundermoon_theme", t);
-  document.documentElement.dataset.theme = t;
+function setTheme(theme) {
+  localStorage.setItem("thundermoon_theme", theme);
+  document.documentElement.dataset.theme = theme;
 
   const themeColorMeta = document.getElementById("themeColorMeta");
-  if (themeColorMeta) themeColorMeta.content = t === "dark" ? "#0A0A14" : "#0068b8";
+  if (themeColorMeta) themeColorMeta.content = theme === "dark" ? "#0A0A14" : "#0068b8";
 
   const icon = document.getElementById("themeIcon");
-  if (icon) icon.textContent = t === "dark" ? "🌙" : "☀️";
+  if (icon) icon.textContent = theme === "dark" ? "🌙" : "☀️";
 
   const currentLang = getLang();
-  const themeText = t === "dark" ? translations[currentLang].dark : translations[currentLang].light;
+  const themeText = theme === "dark" ? translations[currentLang].dark : translations[currentLang].light;
   const themeDisplay = document.getElementById("currentThemeDisplay");
   if (themeDisplay) themeDisplay.textContent = themeText;
+
+  updateStoreBadges();
 
   const checkLight = document.getElementById("check-light");
   const checkDark = document.getElementById("check-dark");
-  if (checkLight) checkLight.style.display = t === "light" ? "inline" : "none";
-  if (checkDark) checkDark.style.display = t === "dark" ? "inline" : "none";
+  if (checkLight) checkLight.style.display = theme === "light" ? "inline" : "none";
+  if (checkDark) checkDark.style.display = theme === "dark" ? "inline" : "none";
 }
 
 // Init header dropdowns
@@ -580,16 +610,16 @@ function initHeader() {
   const themeDropdown = document.getElementById("themeDropdown");
 
   if (langMenuBtn && langDropdown) {
-    langMenuBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
+    langMenuBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
       langDropdown.classList.toggle("show");
       if (themeDropdown) themeDropdown.classList.remove("show");
     });
   }
 
   if (themeMenuBtn && themeDropdown) {
-    themeMenuBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
+    themeMenuBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
       themeDropdown.classList.toggle("show");
       if (langDropdown) langDropdown.classList.remove("show");
     });

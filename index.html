@@ -271,7 +271,7 @@
     
     .logo-text {
       font-family: 'Monoton', cursive;
-      font-size: 4rem;
+      font-size: min(4rem, 8.2vw);
       font-weight: 400;
       letter-spacing: 0.1em;
       margin: 0;
@@ -345,7 +345,7 @@
       background-clip: text;
     }
     .brand-logo--sm .brand-logo-img { height: 1.4em; }
-    .brand-logo--sm .brand-logo-text { font-size: 1.4em; }
+    .brand-logo--sm .brand-logo-text { font-size: min(1.4em, 6vw); }
     .brand-logo--xs .brand-logo-img { height: 1em; }
     .brand-logo--xs .brand-logo-text { font-size: 1em; }
     
@@ -546,248 +546,99 @@
       transform: translateY(-2px) scale(1.02);
     }
     
-    /* Official Store Badges - رموز Apple و Google الرسمية */
-    .store-badge-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: center;
-      width: 100%;
-      min-width: 0;
-      flex: 1;
-      min-height: 0;
-    }
-    
-    .store-badge-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-width: 0;
-      height: 100px;
-      min-height: 100px;
-      max-height: 100px;
-      flex-shrink: 0;
-      padding: 0;
-      box-sizing: border-box;
-      overflow: hidden;
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: 14px;
-      border: 1px solid var(--glass-border);
-      box-shadow: 
-        0 4px 16px var(--shadow-dark),
-        0 0 0 1px rgba(0,0,0,0.04),
-        inset 0 1px 0 rgba(255,255,255,0.5);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: not-allowed;
-      pointer-events: none;
-      opacity: 0.9;
-    }
-    
-    
-    [data-theme="dark"] .store-badge-link {
-      background: var(--glass);
-      border-color: var(--glass-border);
-      box-shadow: 
-        0 4px 20px rgba(0,0,0,0.3),
-        inset 0 1px 0 rgba(255,255,255,0.08);
-    }
-    
-    .coming-soon {
-      font-size: 1.05rem;
-      color: var(--text-tertiary);
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-    .coming-soon-badge {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      font-weight: 600;
-      margin: 0;
-      letter-spacing: 0.5px;
-      flex-shrink: 0;
-      align-self: flex-end;
-    }
-    
-    .store-badge {
-      height: 70px;
-      max-height: 70px;
-      width: 100%;
-      max-width: 100%;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-      transition: opacity 0.3s ease;
-    }
-    
-    .app-store-badge { height: 70px; max-height: 70px; max-width: 100%; }
-    .google-play-badge { height: 88px; max-height: 88px; max-width: 100%; }
-    
-    [data-theme="dark"] .app-store-badge {
-      filter: invert(1);
-    }
-    
-    /* Download Section - أزرار التحميل + قائمة الانتظار في سطر واحد */
+    /* The App Store and newsletter card: two balanced halves side by side, stacked on a phone */
     .download-section {
       margin-top: 0.75rem;
-      padding: 1.25rem 1.5rem;
+      padding: 1.75rem 2rem;
       width: 100%;
       background: var(--glass);
       border-radius: 20px;
       border: 1px solid var(--glass-border);
     }
     .download-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: stretch;
-      justify-content: center;
-      gap: 1.5rem;
-      width: 100%;
-    }
-    
-    .store-options {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 1rem;
-      align-items: stretch;
-      justify-items: stretch;
+      align-items: center;
+      gap: 2rem;
       width: 100%;
-      max-width: 520px;
-      align-self: flex-end;
     }
+    .store-options { display: flex; justify-content: center; width: 100%; }
     .store-option {
       display: flex;
       flex-direction: column;
-      align-items: stretch;
-      gap: 0.5rem;
-      width: 100%;
-      min-width: 0;
-      min-height: 0;
-    }
-    .store-option .store-badge-wrap { margin: 0; }
-    .store-status {
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-    .store-status.store-coming { color: var(--text-tertiary); }
-    .store-status.store-available { color: var(--success); font-weight: 600; }
-    .store-qr {
-      margin-top: 0.5rem;
-      padding: 12px;
-      background: var(--white);
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-    .store-qr-img { width: 120px; height: 120px; display: block; border-radius: 6px; }
-    .download-section[data-has-available="true"] .coming-soon-badge { display: none; }
-    .download-section[data-has-available="false"] .store-option .store-coming { display: none !important; }
-    .store-option[data-available="true"] .store-coming { display: none !important; }
-    .store-option[data-available="true"] .store-available { display: inline !important; }
-    .store-option[data-available="true"] .store-qr { display: block !important; }
-    .store-option[data-available="true"] .store-badge-link { cursor: pointer; pointer-events: auto; opacity: 1; }
-    .store-option[data-available="true"] .store-badge-link[href] { text-decoration: none; }
-    
-    /* QR Code Section - داخل download-section */
-    .download-section .qr-section {
-      margin-top: 0;
-      padding-top: 0;
-      border-top: none;
-      display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 1rem;
-      animation: fadeInUp 1s ease-out 0.5s backwards;
-      width: 100%;
-      max-width: 100%;
+      gap: 0.75rem;
+      text-align: center;
     }
-    
-    .qr-text {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-    
-    .qr-codes {
-      display: flex;
-      gap: 2.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 0.5rem;
-    }
-    
-    .qr-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-    
-    .qr-code-link {
-      display: block;
-      padding: 14px;
-      background: var(--white);
-      border-radius: 16px;
-      box-shadow: 
-        0 8px 24px rgba(0,0,0,0.15),
-        inset 0 0 0 1px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
+    .store-badge-wrap { display: block; margin: 0; }
+    .store-badge-link {
+      display: inline-flex;
+      border-radius: 10px;
+      transition: transform 0.25s ease;
       cursor: not-allowed;
       pointer-events: none;
-      opacity: 0.9;
     }
-    
-    .qr-code-img {
-      width: 160px;
-      height: 160px;
-      display: block;
-      border-radius: 6px;
-    }
-    
-    .qr-label {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-    
-    .qr-item .coming-soon {
-      font-size: 0.95rem;
-      margin-top: 0.25rem;
-    }
-    
-    /* Waitlist — محاذاة قاع النموذج مع قاع مربعات المتاجر (بدون تغيير شعارات المتاجر) */
-    .waitlist-section {
-      flex: 1;
-      min-width: 280px;
-      max-width: 420px;
-      text-align: center;
-      padding: 0;
-      margin: 0;
+    .store-option[data-available="true"] .store-badge-link { cursor: pointer; pointer-events: auto; }
+    .store-option[data-available="true"] .store-badge-link:hover { transform: translateY(-2px); }
+    .store-badge-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    /* Apple's badge as Apple draws it: its own size ratio, never recoloured */
+    .store-badge, .app-store-badge { height: 56px; width: auto; max-width: 100%; display: block; }
+    .store-status { font-size: 0.95rem; font-weight: 500; }
+    .store-status.store-coming { color: var(--text-tertiary); }
+    .store-status.store-available { color: var(--success); font-weight: 600; }
+    .store-option[data-available="true"] .store-coming { display: none !important; }
+    .store-option[data-available="true"] .store-available { display: inline !important; }
+    .store-qr {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .store-qr-img {
+      width: 132px;
+      height: 132px;
+      display: block;
+      padding: 8px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .store-qr-caption { font-size: 0.85rem; color: var(--text-tertiary); }
+    .coming-soon {
+      font-size: 1.05rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .waitlist-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+      text-align: center;
+      padding-inline-start: 2rem;
+      border-inline-start: 1px solid var(--glass-border);
     }
     .waitlist-title {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 0.35rem;
+      margin: 0;
     }
     .waitlist-desc {
       font-size: 0.95rem;
       color: var(--text-secondary);
-      margin-bottom: 0.5rem;
+      margin: 0;
     }
     .waitlist-form {
       display: flex;
       gap: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: auto;
+      margin-top: 0.75rem;
     }
     .waitlist-input {
       flex: 1;
-      min-width: 200px;
+      min-width: 0;
       padding: 0.85rem 1rem;
       border-radius: 12px;
       border: 1px solid var(--glass-border);
@@ -803,6 +654,7 @@
       box-shadow: 0 0 0 2px rgba(0,160,210,0.2);
     }
     .waitlist-btn {
+      flex-shrink: 0;
       padding: 0.85rem 1.5rem;
       border-radius: 12px;
       border: none;
@@ -815,35 +667,27 @@
       transition: all 0.3s ease;
     }
     .waitlist-btn:hover { background: var(--primary-light); transform: translateY(-1px); }
-    .waitlist-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
-    .waitlist-msg {
-      margin-top: 0.75rem;
-      font-size: 0.95rem;
+    .waitlist-msg { margin: 0.5rem 0 0; font-size: 0.95rem; color: var(--accent); }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
     }
-    .waitlist-msg.success { color: var(--success); }
-    .waitlist-msg.error { color: var(--error); }
-    
-    /* Hide QR codes on mobile, show store buttons prominently */
+
     @media (max-width: 768px) {
-      .download-section { padding: 1rem 1.25rem; }
-      .download-row {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1rem;
-      }
-      .store-options,
-      .coming-soon-badge {
-        align-self: stretch;
-      }
-      .waitlist-form {
-        margin-top: 0;
-      }
-      .waitlist-desc {
-        margin-bottom: 1rem;
-      }
-      .waitlist-section { min-width: 100%; max-width: 100%; }
-      .download-section .qr-section {
-        display: none;
+      .download-section { padding: 1.25rem; }
+      .download-row { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+      /* on a phone the badge itself opens the store: no code to scan */
+      .store-qr { display: none; }
+      .waitlist-section {
+        padding-inline-start: 0;
+        padding-top: 1.25rem;
+        border-inline-start: none;
+        border-top: 1px solid var(--glass-border);
       }
 
       .hero {
@@ -883,28 +727,6 @@
       .section-title {
         text-align: center;
       }
-      
-      .store-options { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); width: 100%; max-width: 340px; margin: 0 auto; gap: 0.75rem; align-items: stretch; }
-      .store-option { min-width: 0; width: 100%; align-items: stretch; }
-      .store-badge-wrap {
-        width: 100%;
-        max-width: 100%;
-      }
-      
-      .store-badge-link {
-        width: 100%;
-        min-width: 0;
-        height: 100px;
-        min-height: 100px;
-        max-height: 100px;
-        padding: 0 10px;
-        box-sizing: border-box;
-        overflow: hidden;
-      }
-      
-      .store-badge,
-      .app-store-badge { height: 70px; max-height: 70px; max-width: 100%; width: 100%; object-fit: contain; object-position: center; }
-      .google-play-badge { height: 88px; max-height: 88px; max-width: 100%; width: 100%; object-fit: contain; }
       
       .coming-soon {
         font-size: 0.95rem;
@@ -1688,7 +1510,7 @@
       border-left-color: rgba(255, 255, 255, 0.98);
     }
 
-    /* أزرار +/− — أيقونات MapLibre سوداء افتراضياً: داكن = خلفية داكنة + invert للأيقونة، فاتح = أبيض وبدون invert */
+    /* أزرار +/− — أيقونات MapLibre سوداء افتراضيا: داكن = خلفية داكنة + invert للأيقونة، فاتح = أبيض وبدون invert */
     .growth-map-container .maplibregl-ctrl-group {
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
@@ -2478,7 +2300,7 @@
       }
       
       .logo-text {
-        font-size: 2.5rem;
+        font-size: min(2.5rem, 8.2vw);
       }
       
       .tagline { 
@@ -2603,7 +2425,7 @@
       }
       
       .logo-text {
-        font-size: 2rem;
+        font-size: min(2rem, 8.2vw);
       }
       
       .tagline {
@@ -2649,7 +2471,7 @@
       }
       
       .logo-text {
-        font-size: 2.5rem;
+        font-size: min(2.5rem, 8.2vw);
       }
       
       .tagline {
@@ -3126,7 +2948,6 @@
     <div class="hero-content">
       <!-- ThunderMoon Logo with Text -->
       <div class="logo-with-text">
-        <img src="assets/laserbeam_logo.png" alt="ThunderMoon" class="hero-logo-img" id="heroLogo">
         <h1 class="logo-text">THUNDERMOON</h1>
       </div>
       <p class="tagline" data-i18n="tagline">الألعاب حيث يلتقي الضوء بالهندسة</p>
@@ -3178,7 +2999,6 @@
     <h2 class="section-title">
       <span class="why-brand-font" data-i18n="whyPrefix">لماذا </span>
       <span class="brand-logo brand-logo--sm">
-        <img src="assets/laserbeam_logo.png" alt="T" class="brand-logo-img" data-brand-logo>
         <span class="brand-logo-text">THUNDERMOON</span>
       </span>
       <span class="why-suffix" data-i18n="whySuffix">؟</span>
@@ -3199,7 +3019,7 @@
             <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z" fill="currentColor"/>
           </svg>
         </div>
-        <h3 data-i18n="v2">الأجواء أولاً</h3>
+        <h3 data-i18n="v2">الأجواء أولا</h3>
         <p data-i18n="v2p">الألعاب يجب أن تكون أماكن. نبني عوالم تخطفها — مظلمة، كونية، نابضة بالضوء.</p>
       </div>
       <div class="feature-card">
@@ -3209,7 +3029,7 @@
           </svg>
         </div>
         <h3 data-i18n="v3">موبايل أصيل</h3>
-        <p data-i18n="v3p">مبنية للّمس من الأساس. ليست منقولة — لعبة تنتمي للجهاز في جيبك.</p>
+        <p data-i18n="v3p">مبنية للمس من الأساس. ليست منقولة — لعبة تنتمي للجهاز في جيبك.</p>
       </div>
     </div>
 
@@ -3227,37 +3047,41 @@
     </div>
 
     <!-- Coming Soon -->
-    <h3 class="provider-section-title" data-i18n="moreComing">المزيد قريباً</h3>
+    <h3 class="provider-section-title" data-i18n="moreComing">المزيد قريبا</h3>
     <div class="features-grid provider-features">
       <div class="feature-card" style="opacity:0.7;">
         <div class="feature-icon-wrapper">
           <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 5H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" fill="currentColor"/></svg>
         </div>
-        <h3 data-i18n="comingSoon">قريباً</h3>
+        <h3 data-i18n="comingSoon">قريبا</h3>
         <p data-i18n="laserbeamTagline">ألغاز الليزر في عالم هندسي مظلم</p>
       </div>
     </div>
 
-    <!-- Download: App Store only (LaserBeam) -->
+    <!-- Download: our games on the App Store -->
     <div class="download-section" data-has-available="true">
       <div class="download-row">
         <div class="store-options">
           <div class="store-option" data-available="true" data-store="ios">
             <span class="store-badge-wrap">
-              <a href="#" class="store-badge-link" aria-disabled="false">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="store-badge app-store-badge" loading="eager">
+              <a href="https://apps.apple.com/developer/raad-badr/id1078779583" target="_blank" rel="noopener noreferrer" class="store-badge-link" aria-label="App Store">
+                <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/ar-ar" alt="App Store" class="store-badge app-store-badge" data-store-badge loading="eager">
               </a>
             </span>
-            <span class="store-status store-coming" style="display:none;" data-i18n="comingSoon">قريباً</span>
-            <span class="store-status store-available" data-i18n="availableNow">متوفر الآن · جرّب</span>
-            <div class="store-qr" style="display:none;"><img class="store-qr-img" src="" alt="QR"></div>
+            <span class="store-status store-coming" style="display:none;" data-i18n="comingSoon">قريبا</span>
+            <span class="store-status store-available" data-i18n="availableNow">متوفر الآن · جرب</span>
+            <div class="store-qr">
+              <img class="store-qr-img" src="assets/app_store_qr.svg" alt="QR" width="132" height="132">
+              <span class="store-qr-caption" data-i18n="scanToOpen">امسح الرمز بكاميرا هاتفك</span>
+            </div>
           </div>
         </div>
         <div class="waitlist-section">
-          <p class="waitlist-title" data-i18n="ctaTitle">ابقَ في المدار</p>
+          <p class="waitlist-title" data-i18n="ctaTitle">ابق في المدار</p>
           <p class="waitlist-desc" data-i18n="ctaDesc">تابع ثندرمون لتحديثات الألعاب وسجل التطوير والإصدارات الجديدة. لا إزعاج — إشارة فقط.</p>
           <form class="waitlist-form" id="newsletterForm">
-            <input type="email" class="waitlist-input" id="newsletterEmail" placeholder="" required autocomplete="email">
+            <label for="newsletterEmail" class="visually-hidden" data-i18n="newsletterPlaceholder">بريدك الإلكتروني</label>
+            <input type="email" class="waitlist-input" id="newsletterEmail" placeholder="بريدك الإلكتروني" data-i18n-placeholder="newsletterPlaceholder" required autocomplete="email" dir="ltr">
             <button type="submit" class="waitlist-btn" id="newsletterBtn" data-i18n="newsletterSubmit">اشترك</button>
           </form>
           <p class="waitlist-msg" id="newsletterMsg" style="display:none;"></p>
@@ -3276,30 +3100,30 @@
       <a href="licenses.html" data-i18n="licensesLink">التراخيص</a>
       <a href="#games" data-i18n="gamesLink">الألعاب</a>
       <a href="mailto:raadbadr@gmail.com" class="footer-social-icon" aria-label="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
-      <a href="https://x.com/thundermoon" target="_blank" rel="noopener noreferrer" aria-label="X" class="footer-social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-      <a href="https://www.instagram.com/thundermoon" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer-social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.058 1.645-.07 4.849-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
     </p>
     <p class="footer-copyright">
       <span data-i18n="copyrightLine2">جميع الحقوق محفوظة</span>
-      <span> <span class="brand-logo brand-logo--xs"><img src="assets/laserbeam_logo.png" alt="T" class="brand-logo-img" data-brand-logo-footer><span class="brand-logo-text">THUNDERMOON</span></span> <span data-i18n="copyrightLine1">© 2026</span></span>
+      <span> <span class="brand-logo brand-logo--xs"><span class="brand-logo-text">THUNDERMOON</span></span> <span data-i18n="copyrightLine1">© 2026</span></span>
     </p>
   </footer>
 
   <script src="i18n.js"></script>
   <script>
-    // Newsletter form (local only — no backend)
+    // Newsletter: the visitor's mail app opens a subscription message to us with the address typed in
     (function () {
       var form = document.getElementById('newsletterForm');
       if (!form) return;
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var msg = document.getElementById('newsletterMsg');
-        var l = (localStorage.getItem('thundermoon_lang') || 'ar');
-        var txt = (typeof translations !== 'undefined' && translations[l] && translations[l].newsletterSuccess) ? translations[l].newsletterSuccess : '✓';
-        msg.textContent = txt;
-        msg.style.display = 'block';
-        msg.style.color = 'var(--accent)';
-        form.reset();
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var language = localStorage.getItem('thundermoon_lang') || 'ar';
+        var texts = (typeof translations !== 'undefined' && translations[language]) || {};
+        var address = document.getElementById('newsletterEmail').value.trim();
+        var body = (texts.newsletterMailBody || '{email}').replace('{email}', address);
+        window.location.href = 'mailto:raadbadr@gmail.com?subject=' + encodeURIComponent(texts.newsletterMailSubject || 'ThunderMoon') +
+          '&body=' + encodeURIComponent(body);
+        var message = document.getElementById('newsletterMsg');
+        message.textContent = texts.newsletterNote || '';
+        message.style.display = 'block';
       });
     })();
 
