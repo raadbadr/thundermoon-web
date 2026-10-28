@@ -28,6 +28,9 @@ const translations = {
     tathakkar: "تذكر اللون",
     tathakkarTag: "ذاكرة / عائلي",
     tathakkarDesc: "لعبة ذاكرة تتحدى قدرتك على تذكر تسلسل الألوان. بسيطة وممتعة، ومناسبة للأطفال والكبار.",
+    tagDevlog: "سجل التطوير",
+    tagDesign: "تصميم",
+    tagTechnical: "تقني",
     comingSoon: "قريبا",
     // Home page (games-site look, October 2026)
     homeGamesTitle: "الألعاب",
@@ -50,7 +53,7 @@ const translations = {
     ctaMailDesc: "اقتراح أو مشكلة في لعبة؟ راسلنا مباشرة",
     // About
     aboutTitle: "مستقل بالاختيار، دقيق بالطباع",
-    aboutDesc: "ثندرمون استوديو ألعاب موبايل مستقل يركز على تجارب أجوائية. لا فرق، لا لجان — رؤية واحدة تنفذ بإتقان.",
+    aboutDesc: "ثندرمون استوديو مستقل لألعاب الهاتف المحمول يركز على تجارب أجوائية. لا فرق، لا لجان — رؤية واحدة تنفذ بإتقان.",
     aboutDesc2: "كل لعبة تبدأ من شعور: ثقل العتمة قبل وصول الضوء. رضا الزاوية المثالية. الصمت بين اللغز والحل.",
     readMore: "اقرأ المزيد",
     // Stats
@@ -66,7 +69,7 @@ const translations = {
     v1p: "كل بكسل، كل زاوية، كل تفاعل مقصود. لا حشو، لا ضجيج — الأساسي فقط.",
     v2: "الأجواء أولا",
     v2p: "الألعاب يجب أن تكون أماكن. نبني عوالم تخطفها — مظلمة، كونية، نابضة بالضوء.",
-    v3: "موبايل أصيل",
+    v3: "صنعت للهاتف",
     v3p: "مبنية للمس من الأساس. ليست منقولة — لعبة تنتمي للجهاز في جيبك.",
     // Blog
     blogTitle: "سجل التطوير وأفكار",
@@ -75,7 +78,7 @@ const translations = {
     blog1d: "رحلة بناء لعبة ألغاز ليزر في أنريل إنجن 5 — من النموذج الأول إلى بناء iOS جاهز للإنتاج.",
     blog2: "الهندسة الطيفية: فلسفة التصميم",
     blog2d: "كيف تشكل العتمة والضوء والهندسة الدقيقة كل قرار في ألعابنا. غوص عميق في اللغة البصرية.",
-    blog3: "العرض المؤجل للموبايل في UE5",
+    blog3: "العرض المؤجل على الهاتف المحمول في UE5",
     blog3d: "تفصيل تقني: تفعيل مسار التظليل المؤجل للجوال لإضاءة فورية على iOS دون إذابة البطارية.",
     readArticle: "اقرأ المقال",
     // CTA
@@ -97,14 +100,13 @@ const translations = {
     availableNow: "متوفر الآن · جرب",
     newsletterSubmit: "اشترك",
     newsletterPlaceholder: "بريدك الإلكتروني",
-    newsletterSuccess: "تم الاشتراك! سنبقيك في المدار.",
     playLaserbeam: "العب لايزر بيم",
     laserbeamTagline: "ألغاز الليزر في عالم هندسي مظلم",
     studio: "الاستوديو",
     legal: "قانوني",
     copyrightLine1: "© 2026",
     copyrightLine2: "جميع الحقوق محفوظة",
-    footerTagline: "استوديو ألعاب موبايل مستقل. نصنع تجارب أجوائية حيث يلتقي الضوء بالهندسة.",
+    footerTagline: "استوديو مستقل لألعاب الهاتف المحمول. نصنع تجارب أجوائية حيث يلتقي الضوء بالهندسة.",
     // Support
     supportTitle: "الدعم",
     supportSubtitle: "أسئلة شائعة وطرق التواصل معنا.",
@@ -187,6 +189,9 @@ const translations = {
     tathakkar: "Remember the Color",
     tathakkarTag: "Memory / Family",
     tathakkarDesc: "A memory game that challenges you to recall color sequences. Simple and fun, great for kids and adults.",
+    tagDevlog: "Devlog",
+    tagDesign: "Design",
+    tagTechnical: "Technical",
     comingSoon: "Coming Soon",
     // Home page (games-site look, October 2026)
     homeGamesTitle: "Games",
@@ -250,7 +255,6 @@ const translations = {
     availableNow: "Available now · Try it",
     newsletterSubmit: "Subscribe",
     newsletterPlaceholder: "Your email",
-    newsletterSuccess: "Subscribed! We'll keep you in orbit.",
     playLaserbeam: "Play LaserBeam",
     laserbeamTagline: "Laser puzzles in a dark geometric world",
     studio: "Studio",
@@ -333,6 +337,9 @@ const translations = {
     tathakkar: "Souviens-toi des couleurs",
     tathakkarTag: "Mémoire / Famille",
     tathakkarDesc: "Un jeu de mémoire qui met au défi votre capacité à retenir des séquences de couleurs. Simple et amusant, pour petits et grands.",
+    tagDevlog: "Journal de dev",
+    tagDesign: "Design",
+    tagTechnical: "Technique",
     comingSoon: "Bientôt",
     // Home page (games-site look, October 2026)
     homeGamesTitle: "Jeux",
@@ -396,7 +403,6 @@ const translations = {
     availableNow: "Disponible · Essayez",
     newsletterSubmit: "S'abonner",
     newsletterPlaceholder: "Votre email",
-    newsletterSuccess: "Inscrit ! On vous garde en orbite.",
     playLaserbeam: "Jouer à LaserBeam",
     laserbeamTagline: "Puzzles laser dans un monde géométrique sombre",
     studio: "Studio",
@@ -479,6 +485,9 @@ const translations = {
     tathakkar: "رنگ یاد رکھیں",
     tathakkarTag: "میموری / فیملی",
     tathakkarDesc: "ایک میموری گیم جو رنگوں کی ترتیب یاد رکھنے کی صلاحیت کو آزماتی ہے۔ آسان اور دلچسپ، بچوں اور بڑوں کے لیے بہترین۔",
+    tagDevlog: "ترقیاتی روداد",
+    tagDesign: "ڈیزائن",
+    tagTechnical: "تکنیکی",
     comingSoon: "جلد آ رہا ہے",
     // Home page (games-site look, October 2026)
     homeGamesTitle: "کھیل",
@@ -542,7 +551,6 @@ const translations = {
     availableNow: "دستیاب · آزمائیں",
     newsletterSubmit: "سبسکرائب",
     newsletterPlaceholder: "آپ کا ای میل",
-    newsletterSuccess: "سبسکرائب ہو گیا! ہم آپ کو مدار میں رکھیں گے۔",
     playLaserbeam: "لیزر بیم کھیلیں",
     laserbeamTagline: "تاریک ہندسی دنیا میں لیزر پہیلیاں",
     studio: "اسٹوڈیو",
@@ -614,70 +622,83 @@ const langTitles = {
   ur: translations.ur.pageTitleHome
 };
 
+// Apple's official App Store badge, unaltered, in the page's language: the white one on the dark look, the black on the light
+const STORE_BADGE_LOCALES = { ar: "ar-ar", en: "en-us", fr: "fr-fr", ur: "ur-in" };
+function updateStoreBadges() {
+  const locale = STORE_BADGE_LOCALES[getLang()] || "en-us";
+  const colour = getTheme() === "dark" ? "white" : "black";
+  document.querySelectorAll("img[data-store-badge]").forEach(badge => {
+    badge.src = "https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/" + colour + "/" + locale;
+  });
+}
+
 function getLang() { return localStorage.getItem("thundermoon_lang") || "ar"; }
 function getTheme() { return localStorage.getItem("thundermoon_theme") || "dark"; }
 
-function setLang(l) {
-  localStorage.setItem("thundermoon_lang", l);
-  document.documentElement.lang = l;
-  document.documentElement.dir = (l === "ar" || l === "ur") ? "rtl" : "ltr";
+function setLang(language) {
+  localStorage.setItem("thundermoon_lang", language);
+  document.documentElement.lang = language;
+  document.documentElement.dir = (language === "ar" || language === "ur") ? "rtl" : "ltr";
 
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const k = el.dataset.i18n;
-    if (translations[l] && translations[l][k]) {
-      if (el.children.length > 0) {
-        const textSpan = Array.from(el.children).find(child => child.hasAttribute('data-i18n'));
-        if (textSpan) textSpan.textContent = translations[l][k];
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    if (translations[language] && translations[language][key]) {
+      if (element.children.length > 0) {
+        const textSpan = Array.from(element.children).find(child => child.hasAttribute('data-i18n'));
+        if (textSpan) textSpan.textContent = translations[language][key];
       } else {
-        el.textContent = translations[l][k];
+        element.textContent = translations[language][key];
       }
     }
   });
 
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
-    const k = el.dataset.i18nPlaceholder;
-    if (translations[l] && translations[l][k]) el.placeholder = translations[l][k];
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(field => {
+    const text = translations[language] && translations[language][field.dataset.i18nPlaceholder];
+    if (text) field.placeholder = text;
   });
+  updateStoreBadges();
 
   const display = document.getElementById("currentLangDisplay");
-  if (display) display.textContent = langNames[l] || l;
+  if (display) display.textContent = langNames[language] || language;
 
   ["ar", "en", "fr", "ur"].forEach(code => {
-    const el = document.getElementById("check-" + code);
-    if (el) el.style.display = l === code ? "inline" : "none";
+    const element = document.getElementById("check-" + code);
+    if (element) element.style.display = language === code ? "inline" : "none";
   });
 
   const currentTheme = getTheme();
-  const themeText = currentTheme === "dark" ? translations[l].dark : translations[l].light;
+  const themeText = currentTheme === "dark" ? translations[language].dark : translations[language].light;
   const themeDisplay = document.getElementById("currentThemeDisplay");
   if (themeDisplay) themeDisplay.textContent = themeText;
 
-  const titleKey = "pageTitle" + (document.body.dataset.page || "Home").replace(/^./, c => c.toUpperCase());
-  if (translations[l][titleKey]) document.title = translations[l][titleKey];
+  const titleKey = "pageTitle" + (document.body.dataset.page || "Home").replace(/^./, letter => letter.toUpperCase());
+  if (translations[language][titleKey]) document.title = translations[language][titleKey];
 }
 
-function setTheme(t) {
-  localStorage.setItem("thundermoon_theme", t);
-  document.documentElement.dataset.theme = t;
+function setTheme(theme) {
+  localStorage.setItem("thundermoon_theme", theme);
+  document.documentElement.dataset.theme = theme;
 
   const themeColorMeta = document.getElementById("themeColorMeta");
   if (themeColorMeta) {
     const pageBar = getComputedStyle(document.documentElement).getPropertyValue("--theme-bar").trim();
-    themeColorMeta.content = pageBar || (t === "dark" ? "#0A0A14" : "#0068b8");
+    themeColorMeta.content = pageBar || (theme === "dark" ? "#0A0A14" : "#0068b8");
   }
 
   const icon = document.getElementById("themeIcon");
-  if (icon) icon.textContent = t === "dark" ? "🌙" : "☀️";
+  if (icon) icon.textContent = theme === "dark" ? "🌙" : "☀️";
 
   const currentLang = getLang();
-  const themeText = t === "dark" ? translations[currentLang].dark : translations[currentLang].light;
+  const themeText = theme === "dark" ? translations[currentLang].dark : translations[currentLang].light;
   const themeDisplay = document.getElementById("currentThemeDisplay");
   if (themeDisplay) themeDisplay.textContent = themeText;
 
+  updateStoreBadges();
+
   const checkLight = document.getElementById("check-light");
   const checkDark = document.getElementById("check-dark");
-  if (checkLight) checkLight.style.display = t === "light" ? "inline" : "none";
-  if (checkDark) checkDark.style.display = t === "dark" ? "inline" : "none";
+  if (checkLight) checkLight.style.display = theme === "light" ? "inline" : "none";
+  if (checkDark) checkDark.style.display = theme === "dark" ? "inline" : "none";
 }
 
 // Init header dropdowns
@@ -688,16 +709,16 @@ function initHeader() {
   const themeDropdown = document.getElementById("themeDropdown");
 
   if (langMenuBtn && langDropdown) {
-    langMenuBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
+    langMenuBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
       langDropdown.classList.toggle("show");
       if (themeDropdown) themeDropdown.classList.remove("show");
     });
   }
 
   if (themeMenuBtn && themeDropdown) {
-    themeMenuBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
+    themeMenuBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
       themeDropdown.classList.toggle("show");
       if (langDropdown) langDropdown.classList.remove("show");
     });

@@ -147,3 +147,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* The «الرئيسية» button readable in both looks: dark words on the dark look's bright cyan, white on a deeper blue in the light */
+[data-theme="dark"] .back-btn { color: #0A0A14; }
+[data-theme="light"] .back-btn { background: linear-gradient(135deg, #005f99, #0077b8); color: #ffffff; }

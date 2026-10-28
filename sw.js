@@ -1,5 +1,5 @@
 /* ThunderMoon — offline cache (same-origin only) */
-const CACHE_NAME = "thundermoon-offline-v3";
+const CACHE_NAME = "thundermoon-offline-v5";
 
 const PRECACHE_URLS = [
   "./index.html",
@@ -12,16 +12,15 @@ const PRECACHE_URLS = [
   "./header.css",
   "./footer.css",
   "./i18n.js",
-  "./Monoton-Regular.ttf",
   "./assets/laserbeam_logo.png",
+  "./assets/xoxo_icon.jpg",
+  "./assets/tathakkar_icon.jpg",
   "./assets/laserbeam_preview.png",
   "./assets/laserbeam_launch.png",
   "./assets/laserbeam_cover.jpg",
   "./assets/laserbeam_icon.jpg",
   "./assets/thunderwall_cover.jpg",
-  "./assets/thunderwall_icon.jpg",
-  "./assets/xoxo_icon.jpg",
-  "./assets/tathakkar_icon.jpg"
+  "./assets/thunderwall_icon.jpg"
 ];
 
 function scopeBase() {
@@ -30,9 +29,9 @@ function scopeBase() {
 
 function isDocumentRequest(request, url) {
   if (request.mode === "navigate") return true;
-  const p = url.pathname;
-  if (p.endsWith(".html")) return true;
-  if (p === "/" || p.endsWith("/")) return true;
+  const pathname = url.pathname;
+  if (pathname.endsWith(".html")) return true;
+  if (pathname === "/" || pathname.endsWith("/")) return true;
   return false;
 }
 
@@ -56,7 +55,7 @@ self.addEventListener("activate", (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k)))
+        Promise.all(keys.filter((cacheName) => cacheName !== CACHE_NAME).map((cacheName) => caches.delete(cacheName)))
       )
       .then(() => self.clients.claim())
   );

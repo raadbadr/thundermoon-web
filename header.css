@@ -247,4 +247,8 @@ body.has-site-header { padding-top: 52px; }
   [dir="ltr"] .site-header {
     justify-content: center;
   }
+  /* the menus open under the header across its width, so they never leave the screen */
+  .site-header .menu-btn { position: static; transform: none; will-change: auto; }
+  .site-header .menu-dropdown,
+  [dir="ltr"] .site-header .menu-dropdown { left: 0.75rem; right: 0.75rem; width: auto; min-width: 0; max-width: none; }
 }
