@@ -1,5 +1,6 @@
 /* ThunderMoon — offline cache (same-origin only) */
-const CACHE_NAME = "thundermoon-offline-v6";
+// The pages ask for header.css, footer.css and i18n.js with ?v=<this number>: change both together
+const CACHE_NAME = "thundermoon-offline-v7";
 
 const PRECACHE_URLS = [
   "./index.html",
@@ -9,9 +10,9 @@ const PRECACHE_URLS = [
   "./privacy.html",
   "./terms.html",
   "./licenses.html",
-  "./header.css",
-  "./footer.css",
-  "./i18n.js",
+  "./header.css?v=7",
+  "./footer.css?v=7",
+  "./i18n.js?v=7",
   "./assets/thundermoon_logo_dark.svg",
   "./assets/thundermoon_logo_light.svg",
   "./assets/thundermoon_wordmark_dark.svg",
