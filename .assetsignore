@@ -17,7 +17,13 @@ worker.js
 # Internal docs (README, rules, design notes)
 *.md
 
-# اعدادات المشروع — ليست جزءا من الموقع
+# ادوات المشروع واعداداته — ليست جزءا من الموقع
+tools
+package.json
+package-lock.json
 wrangler.toml
 .DS_Store
 .assetsignore
+
+# لقطات القياس (tools/measure.mjs) — محلية لا ترفع
+.measure-shots

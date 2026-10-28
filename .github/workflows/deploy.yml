@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          # wrangler 4 لا يعمل دون Node 22
+          node-version: '22'
 
       # سر كلاودفلير يضيفه المالك مرة واحدة في اعدادات المستودع. قبل اضافته يتخطى
       # هذا العمل النشر بنجاح بدل ان يفشل ويرسل تنبيهات، وبعد اضافته يعمل تلقائيا.
@@ -29,4 +30,4 @@ jobs:
       - name: Skip (no CLOUDFLARE_API_TOKEN yet)
         if: steps.token.outputs.present != 'true'
         run: |
-          echo "::notice title=Deploy skipped::اضف السر CLOUDFLARE_API_TOKEN في اعدادات المستودع ليصير النشر تلقائيا. النشر يتم حاليا يدويا بـ npx wrangler deploy."
+          echo "::notice title=Deploy skipped::اضف السر CLOUDFLARE_API_TOKEN في اعدادات المستودع ليصير النشر تلقائيا. النشر يتم حاليا يدويا بـ npx wrangler@4 deploy."

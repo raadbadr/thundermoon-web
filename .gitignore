@@ -2,3 +2,6 @@
 *.md
 *.zip
 .claude/
+.wrangler/
+node_modules
+.measure-shots/

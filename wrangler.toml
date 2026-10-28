@@ -3,7 +3,8 @@ compatibility_date = "2026-06-21"
 main = "worker.js"
 
 # نطاقا الموقع — يربطان تلقائيا عند النشر (Custom Domain)، على طريقة موقع مستر زاهي.
-# كانا على مشروع Cloudflare Pages باسم thundermoon حتى 2026-10-28، ثم نقلا الى هذا الـ Worker.
+# قبل 2026-10-28 كانا يصلان الى هذا الـ Worker بمسارين (raadbadr.com/* و www.raadbadr.com/*) وسجلات DNS
+# تشير الى مشروع Cloudflare Pages بالاسم نفسه؛ منذ ذلك اليوم صارا Custom Domains ولا علاقة لهما بـ Pages.
 routes = [
   { pattern = "raadbadr.com", custom_domain = true },
   { pattern = "www.raadbadr.com", custom_domain = true }
