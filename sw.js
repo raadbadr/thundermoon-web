@@ -1,6 +1,6 @@
 /* ThunderMoon — offline cache (same-origin only) */
 // The pages ask for header.css, footer.css and i18n.js with ?v=<this number>: change both together
-const CACHE_NAME = "thundermoon-offline-v7";
+const CACHE_NAME = "thundermoon-offline-v8";
 
 const PRECACHE_URLS = [
   "./index.html",
@@ -10,16 +10,14 @@ const PRECACHE_URLS = [
   "./privacy.html",
   "./terms.html",
   "./licenses.html",
-  "./header.css?v=7",
-  "./footer.css?v=7",
-  "./i18n.js?v=7",
-  "./assets/thundermoon_logo_dark.svg",
-  "./assets/thundermoon_logo_light.svg",
-  "./assets/thundermoon_wordmark_dark.svg",
-  "./assets/thundermoon_wordmark_light.svg",
-  "./assets/thundermoon_mark.svg",
+  "./header.css?v=8",
+  "./footer.css?v=8",
+  "./i18n.js?v=8",
   "./assets/thundermoon_icon_180.png",
   "./assets/thundermoon_icon_192.png",
+  "./assets/thundermoon_studio_logo_800.webp",
+  "./assets/thundermoon_studio_logo_400.webp",
+  "./assets/thundermoon_icon_32.png",
   "./assets/laserbeam_logo.png",
   "./assets/xoxo_icon.jpg",
   "./assets/tathakkar_icon.jpg",

@@ -1,8 +1,0 @@
-{
-  "name": "thundermoon-web",
-  "private": true,
-  "description": "ThunderMoon — Cloudflare Worker + static site (raadbadr.com)",
-  "devDependencies": {
-    "puppeteer-core": "^23.11.1"
-  }
-}

@@ -152,10 +152,10 @@
 [data-theme="dark"] .back-btn { color: #0A0A14; }
 [data-theme="light"] .back-btn { background: linear-gradient(135deg, #005f99, #0077b8); color: #ffffff; }
 
-/* The studio's logo: the dark look's file or the light look's, whichever the page shows */
-[data-theme="dark"] .logo-for-light,
-[data-theme="light"] .logo-for-dark { display: none; }
-.footer-logo { height: 1.3em; width: auto; display: inline-block; vertical-align: middle; }
+/* The studio's own logo at the head of every footer */
+.footer-studio-logo { display: block; width: fit-content; margin: 0 auto 1.5rem; }
+.footer-studio-logo img { display: block; height: 84px; width: auto; }
+@media (max-width: 768px) { .footer-studio-logo img { height: 68px; } }
 .visually-hidden {
   position: absolute;
   width: 1px;

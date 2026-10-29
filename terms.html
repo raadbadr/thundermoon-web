@@ -12,14 +12,14 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>شروط الاستخدام | ThunderMoon</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="assets/thundermoon_mark.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/thundermoon_icon_32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/thundermoon_icon_192.png">
   <link rel="apple-touch-icon" href="assets/thundermoon_icon_180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="header.css?v=7">
-  <link rel="stylesheet" href="footer.css?v=7">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Monoton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="header.css?v=8">
+  <link rel="stylesheet" href="footer.css?v=8">
   <style>
     *, *::before, *::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     html { -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
@@ -166,6 +166,10 @@
   </div>
 
   <footer class="footer">
+    <picture class="footer-studio-logo">
+      <source type="image/webp" srcset="assets/thundermoon_studio_logo_400.webp">
+      <img src="assets/thundermoon_studio_logo_400.png" alt="ThunderMoon Studio" width="400" height="277" loading="lazy">
+    </picture>
     <p class="footer-links">
       <a href="about.html" data-i18n="aboutLink">من نحن</a>
       <a href="blog.html" data-i18n="blogLink">المدونة</a>
@@ -178,11 +182,11 @@
     </p>
     <p class="footer-copyright">
       <span data-i18n="copyrightLine2">جميع الحقوق محفوظة</span>
-      <span> <span class="brand-logo brand-logo--xs"><img class="footer-logo logo-for-dark" src="assets/thundermoon_logo_dark.svg" alt="THUNDERMOON" width="1306" height="170"><img class="footer-logo logo-for-light" src="assets/thundermoon_logo_light.svg" alt="THUNDERMOON" width="1306" height="170"></span> <span data-i18n="copyrightLine1">© 2026</span></span>
+      <span> <span class="brand-logo brand-logo--xs"><span class="brand-logo-text">THUNDERMOON</span></span> <span data-i18n="copyrightLine1">© 2026</span></span>
     </p>
   </footer>
 
-  <script src="i18n.js?v=7"></script>
+  <script src="i18n.js?v=8"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {

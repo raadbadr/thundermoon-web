@@ -716,10 +716,11 @@ function initHeader() {
     });
   }
 
-  if (themeMenuBtn && themeDropdown) {
+  // زر المظهر يبدل الثيم مباشرة بضغطة واحدة بلا قائمة، كما في باركنزي ومستر زاهي (طلب المالك)
+  if (themeMenuBtn) {
     themeMenuBtn.addEventListener("click", (event) => {
       event.stopPropagation();
-      themeDropdown.classList.toggle("show");
+      setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
       if (langDropdown) langDropdown.classList.remove("show");
     });
   }

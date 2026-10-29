@@ -2,12 +2,12 @@ name = "thundermoon"
 compatibility_date = "2026-06-21"
 main = "worker.js"
 
-# نطاقا الموقع — يربطان تلقائيا عند النشر (Custom Domain)، على طريقة موقع مستر زاهي.
-# قبل 2026-10-28 كانا يصلان الى هذا الـ Worker بمسارين (raadbadr.com/* و www.raadbadr.com/*) وسجلات DNS
-# تشير الى مشروع Cloudflare Pages بالاسم نفسه؛ منذ ذلك اليوم صارا Custom Domains ولا علاقة لهما بـ Pages.
+# نطاقا الموقع يصلان الى هذا الـ Worker بمسارين في منطقة raadbadr.com (كما هما في Cloudflare اليوم).
+# سجلات DNS للنطاقين تشير الى مشروع Cloudflare Pages القديم بالاسم نفسه، فلا يحذف ذلك المشروع:
+# ربطهما كـ Custom Domains كما في مستر زاهي يرفضه Cloudflare (code 100117) ما دامت تلك السجلات موجودة.
 routes = [
-  { pattern = "raadbadr.com", custom_domain = true },
-  { pattern = "www.raadbadr.com", custom_domain = true }
+  { pattern = "raadbadr.com/*", zone_name = "raadbadr.com" },
+  { pattern = "www.raadbadr.com/*", zone_name = "raadbadr.com" }
 ]
 
 [assets]
