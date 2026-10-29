@@ -1,6 +1,6 @@
 /* ThunderMoon — offline cache (same-origin only) */
 // The pages ask for header.css, footer.css and i18n.js with ?v=<this number>: change both together
-const CACHE_NAME = "thundermoon-offline-v8";
+const CACHE_NAME = "thundermoon-offline-v9";
 
 const PRECACHE_URLS = [
   "./index.html",
